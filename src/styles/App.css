@@ -123,13 +123,14 @@ main {
   padding-left: 14px;
 }
 
-.blog {
+.blog-carousel {
   padding: 16px;
   display: flex;
   overflow-x: scroll;
+  overflow-y: hidden;
   column-gap: 12px;
 }
-.blog article {
+.blog-carousel article {
   background-color: white;
   flex: 0 0 100%;
   min-height: 350px;
@@ -138,33 +139,33 @@ main {
   border: 2px solid rgba(233, 132, 107, 0.3);
   border-radius: 7px;
 }
-.blog article div:first-of-type {
+.blog-carousel article div:first-of-type {
   transition: background-size 0.3s;
   flex: 0 0 50%;
-  background-size: 100%;
+  background-size: cover;
   background-repeat: no-repeat;
   border-top-left-radius: 7px;
   border-top-right-radius: 7px;
 }
-.blog article div:first-of-type:hover {
-  background-size: 110%;
-}
-.blog article div:last-of-type {
+.blog-carousel article div:last-of-type {
   display: flex;
   flex-flow: column nowrap;
   row-gap: 7px;
   padding: 14px;
 }
-.blog article div:last-of-type span {
+.blog-carousel article div:last-of-type span {
   font-size: 12px;
-  align-self: flex-end;
+  border-left: 2px solid #f3bfb6;
+  padding-left: 7px;
 }
-.blog article div:last-of-type h3 {
+.blog-carousel article div:last-of-type h3 {
   color: #f3bfb6;
   font-family: "Montserrat Bold";
   font-size: 18px;
+  border-bottom: 2px solid rgba(243, 191, 182, 0.2);
+  padding-bottom: 7px;
 }
-.blog article div:last-of-type p {
+.blog-carousel article div:last-of-type p {
   font-size: 14px;
 }
 

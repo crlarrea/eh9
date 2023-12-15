@@ -1,0 +1,7 @@
+[x] add all blog entries to data file
+[] amend blog carousel cards
+[] create pages for each blog entry
+[] link blog entry card to blog entry page
+[] spotify playlist
+[] add effects with intersection observer
+[] login

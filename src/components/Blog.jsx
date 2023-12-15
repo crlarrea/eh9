@@ -2,7 +2,7 @@ import React from "react";
 import { blog } from "../assets/data/data";
 export const Blog = () => {
   return (
-    <section className="blog">
+    <section className="blog-carousel">
       {blog.map((entry) => {
         return (
           <article>

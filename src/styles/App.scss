@@ -113,35 +113,28 @@ main {
   }
 }
 
-.blog {
+.blog-carousel {
   padding: $m;
   display: flex;
   overflow-x: scroll;
+  overflow-y: hidden;
   column-gap: $xs;
   article {
-     background-color: white;
+    background-color: white;
     flex: 0 0 100%;
     min-height: 350px;
     display: flex;
     flex-flow: column nowrap;
     border: 2px solid rgba($orange900, 0.3);
     border-radius: $xxs;
-    
 
     div {
-
       &:first-of-type {
         transition: background-size 0.3s;
         flex: 0 0 50%;
         background: {
-          size: 100%;
+          size: cover;
           repeat: no-repeat;
-        }
-        &:hover {
-          background: {
-            size: 110%;
-          }
-          
         }
 
         border-top: {
@@ -150,17 +143,16 @@ main {
         }
       }
       &:last-of-type {
-       
         display: flex;
         flex-flow: column nowrap;
         row-gap: $xxs;
         padding: $s;
-        span{
-          font:{
+        span {
+          font: {
             size: $xs;
-
           }
-          align-self: flex-end;
+          border-left: 2px solid rgba($pink900,1  );
+          padding-left: $xxs;
         }
         h3 {
           color: $pink900;
@@ -168,6 +160,8 @@ main {
             family: "Montserrat Bold";
             size: $l;
           }
+          border-bottom: 2px solid rgba($pink900,0.2);
+          padding-bottom: $xxs;
         }
         p {
           font: {
