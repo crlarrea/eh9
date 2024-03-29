@@ -1,0 +1,35 @@
+@import "./UISystem.scss";
+
+.blog {
+  display: flex;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  gap: $s;
+  padding: {
+    left: $s;
+    right: $s;
+  }
+  article {
+    display: flex;
+    flex-flow: column nowrap;
+    row-gap: $xxs;
+    padding: $s;
+    scroll-snap-align: center;
+    border: 2px solid rgba($purple900,0.2);
+    border-radius: $xxs;
+    flex: 0 0 clamp(220px, 280px, 80%);
+    h3 {
+      font: {
+        family: "Montserrat Bold";
+      }
+      color: $purple900;
+      
+    }
+    span{
+      font:{
+        size: $s;
+      }
+      color: rgba(black,0.5);
+    }
+  }
+}

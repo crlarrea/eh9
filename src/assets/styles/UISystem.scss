@@ -1,0 +1,63 @@
+// Fonts
+@font-face {
+  font-family: "Gopher";
+  src: url("../assets/fonts/gopher.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Montserrat Regular";
+  src: url("../fonts/Montserrat-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Montserrat Bold";
+  src: url("../fonts/Montserrat-Bold.ttf");
+}
+// Colours
+$purple900: #a0a6e0ff;
+$pink900: #f3bfb6ff;
+$brown900: #644028ff;
+$orange900: #e9846bff;
+$green900: #749e81ff;
+$white900: #f1f1fcff;
+
+/* Font Sizes */
+$xxs: 7px;
+$xs: 12px;
+$s: 14px;
+$m: 16px;
+$l: 18px;
+$xl: 20px;
+$xxl: 24px;
+$xxl: 30px;
+$xxxl: 36px;
+$h: 48px;
+$xh: 60px;
+$xxh: 72px;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  display: flex;
+  justify-content: center;
+}
+
+#root {
+  height: 100dvh;
+  width: 100dvw;
+  display: flex;
+  flex-flow: column nowrap;
+  font: {
+    family: 'Montserrat Regular';
+    size: $m;
+  }
+}
+
+body {
+  background-color: $white900;
+  color: black;
+}

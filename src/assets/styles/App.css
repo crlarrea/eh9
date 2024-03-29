@@ -1,0 +1,67 @@
+@font-face {
+  font-family: "Gopher";
+  src: url("../assets/fonts/gopher.woff") format("woff");
+}
+@font-face {
+  font-family: "Montserrat Regular";
+  src: url("../fonts/Montserrat-Regular.ttf");
+}
+@font-face {
+  font-family: "Montserrat Bold";
+  src: url("../fonts/Montserrat-Bold.ttf");
+}
+/* Font Sizes */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  display: flex;
+  justify-content: center;
+}
+
+#root {
+  height: 100dvh;
+  width: 100dvw;
+  display: flex;
+  flex-flow: column nowrap;
+  font-family: "Montserrat Regular";
+  font-size: 16px;
+}
+
+body {
+  background-color: #f1f1fc;
+  color: black;
+}
+
+.blog {
+  display: flex;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  gap: 14px;
+  padding-left: 14px;
+  padding-right: 14px;
+}
+.blog article {
+  display: flex;
+  flex-flow: column nowrap;
+  row-gap: 7px;
+  padding: 14px;
+  scroll-snap-align: center;
+  border: 2px solid rgba(160, 166, 224, 0.2);
+  border-radius: 7px;
+  flex: 0 0 clamp(220px, 280px, 80%);
+}
+.blog article h3 {
+  font-family: "Montserrat Bold";
+  color: #a0a6e0;
+}
+.blog article span {
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+/*# sourceMappingURL=App.css.map */
