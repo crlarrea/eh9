@@ -70,10 +70,14 @@ body {
 }
 
 #root {
+  display: flex;
+  flex-flow: column nowrap;
   margin: $h;
   background-color: $pink100;
   color: black;
   border-radius: $h;
   width: 1100px;
-  height: 100vh;
+  font: {
+    family: "Montserrat Regular";
+  }
 }

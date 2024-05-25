@@ -48,7 +48,7 @@ nav {
   padding: $h;
   display: flex;
   flex-flow: row nowrap;
-  // justify-content: space-evenly;
+  justify-content: space-between;
 }
 .logo {
   flex: 0 0 33%;
@@ -75,32 +75,25 @@ nav {
 }
 
 .we-are-open {
-  flex: 1 1 100%;
-  display: flex;
-  justify-content: center;
-  position: relative;
-
+  display: block;
+  div {
+    position: relative;
+  }
   span {
-    display: block;
+    position: absolute;
     height: $xl;
     aspect-ratio: 1;
-    background-color: $pink900;
+    background-color: $green900;
     border-radius: 50%;
-    position: absolute;
+
     &:first-of-type {
       animation: pulsatingLight 2.5s linear 0.3s infinite alternate forwards;
-      // animation: name duration timing-function delay iteration-count direction fill-mode;
-      // left: 50px;
     }
     &:nth-of-type(2) {
       background-color: transparent;
-      border: 2px solid $pink900;
+      border: 2px solid $green900;
       animation: pulsatingLight 2.5s linear 0s infinite reverse forwards;
     }
-  }
-  p{
-    position: inherit;
-    top:$xxl;
   }
 }
 @keyframes pulsatingLight {
@@ -122,5 +115,45 @@ nav {
   color: $purple900;
   font: {
     size: $xxl;
+  }
+}
+
+main {
+  min-height: 500px;
+}
+footer {
+  color: $brown900;
+  padding: $xh $h 0 $h;
+  display: flex;
+  border-bottom: {
+    left-radius: $h;
+    right-radius: $h;
+  }
+
+  article {
+    flex: 1 1 33%;
+    display: flex;
+    flex-flow: column nowrap;
+    &:first-of-type {
+      h2{
+        padding-bottom: $m;
+      }
+    }
+    &:nth-of-type(3) {
+      img {
+        width: 350px;
+        height: auto;
+      }
+    }
+  }
+  background-color: $pink500;
+}
+
+h2 {
+  font: {
+    family: "Gopher Bold";
+  }
+  text: {
+    transform: capitalize;
   }
 }

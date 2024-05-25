@@ -7,7 +7,6 @@ export const WeAreOpen = () => {
         <span></span>
         <span></span>
         <span></span>
-        <p>come on in, we're open</p>
       </div>
     </>
   );
