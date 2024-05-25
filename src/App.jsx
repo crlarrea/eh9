@@ -1,10 +1,11 @@
 import React from "react";
 import "./assets/styles/App.css";
-import { Blog } from "./components/Blog";
+import {MainRoutes} from './routes/MainRoutes'
+
 function App() {
   return (
     <>
-      <Blog />
+      <MainRoutes/>
     </>
   );
 }

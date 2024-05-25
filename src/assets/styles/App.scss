@@ -1,7 +1,7 @@
 @import "./UISystem.scss";
 
 .blog {
-  display: flex;
+  display: none;
   overflow-x: scroll;
   scroll-snap-type: x mandatory;
   gap: $s;
@@ -13,23 +13,114 @@
     display: flex;
     flex-flow: column nowrap;
     row-gap: $xxs;
-    padding: $s;
+    padding: $h $s;
     scroll-snap-align: center;
-    border: 2px solid rgba($purple900,0.2);
+    border: 2px solid rgba($purple900, 0.2);
     border-radius: $xxs;
     flex: 0 0 clamp(220px, 280px, 80%);
     h3 {
-      font: {
-        family: "Montserrat Bold";
+      a {
+        color: $purple900;
+        text-decoration: none;
+        font-family: "Montserrat Bold";
       }
-      color: $purple900;
-      
     }
-    span{
-      font:{
+    p {
+      font: {
         size: $s;
       }
-      color: rgba(black,0.5);
+      color: black;
     }
+
+    span {
+      align-self: flex-end;
+      margin-top: auto;
+      font: {
+        size: $xs;
+        family: "Montserrat Regular";
+      }
+      color: black;
+    }
+  }
+}
+
+nav {
+  padding: $h;
+  display: flex;
+  flex-flow: row nowrap;
+  // justify-content: space-evenly;
+}
+.logo {
+  flex: 0 0 33%;
+  color: black;
+  text: {
+    transform: uppercase;
+    decoration: none;
+  }
+  font-family: "Gopher Bold";
+  div {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    width: $xh;
+    padding: $xxs;
+    aspect-ratio: 1;
+    // background-color: $pink900;
+    border-radius: 100%;
+    overflow: visible;
+  }
+  h1 {
+    color: $brown900;
+  }
+}
+
+.we-are-open {
+  flex: 1 1 100%;
+  display: flex;
+  justify-content: center;
+  position: relative;
+
+  span {
+    display: block;
+    height: $xl;
+    aspect-ratio: 1;
+    background-color: $pink900;
+    border-radius: 50%;
+    position: absolute;
+    &:first-of-type {
+      animation: pulsatingLight 2.5s linear 0.3s infinite alternate forwards;
+      // animation: name duration timing-function delay iteration-count direction fill-mode;
+      // left: 50px;
+    }
+    &:nth-of-type(2) {
+      background-color: transparent;
+      border: 2px solid $pink900;
+      animation: pulsatingLight 2.5s linear 0s infinite reverse forwards;
+    }
+  }
+  p{
+    position: inherit;
+    top:$xxl;
+  }
+}
+@keyframes pulsatingLight {
+  0% {
+    opacity: 0.1;
+    transform: scale(2.3);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.shopping-trolley {
+  display: flex;
+  justify-content: flex-end;
+  flex: 0 0 33%;
+  cursor: pointer;
+  color: $purple900;
+  font: {
+    size: $xxl;
   }
 }

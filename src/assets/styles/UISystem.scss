@@ -1,7 +1,7 @@
 // Fonts
 @font-face {
-  font-family: "Gopher";
-  src: url("../assets/fonts/gopher.woff") format("woff");
+  font-family: "Gopher Bold";
+  src: url("../fonts/Gopher-Bold.ttf");
 }
 
 @font-face {
@@ -14,8 +14,11 @@
   src: url("../fonts/Montserrat-Bold.ttf");
 }
 // Colours
-$purple900: #a0a6e0ff;
-$pink900: #f3bfb6ff;
+$purple900: #4252dbff;
+$purple500: #9fa6e5;
+$pink900: #ff8cc3ff;
+$pink500: #f3bfb6ff;
+$pink100: #fffafeff;
 $brown900: #644028ff;
 $orange900: #e9846bff;
 $green900: #749e81ff;
@@ -46,18 +49,31 @@ html {
   justify-content: center;
 }
 
-#root {
-  height: 100dvh;
-  width: 100dvw;
-  display: flex;
-  flex-flow: column nowrap;
-  font: {
-    family: 'Montserrat Regular';
-    size: $m;
-  }
+body {
+  background: linear-gradient(
+    360deg,
+    hsla(232, 100%, 96%, 1) 0%,
+    hsla(334, 100%, 95%, 1) 100%
+  );
+
+  background: -moz-linear-gradient(
+    360deg,
+    hsla(232, 100%, 96%, 1) 0%,
+    hsla(334, 100%, 95%, 1) 100%
+  );
+
+  background: -webkit-linear-gradient(
+    360deg,
+    hsla(232, 100%, 96%, 1) 0%,
+    hsla(334, 100%, 95%, 1) 100%
+  );
 }
 
-body {
-  background-color: $white900;
+#root {
+  margin: $h;
+  background-color: $pink100;
   color: black;
+  border-radius: $h;
+  width: 1100px;
+  height: 100vh;
 }
