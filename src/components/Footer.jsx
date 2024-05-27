@@ -6,10 +6,6 @@ export const Footer = () => {
   return (
     <>
       <article>
-        <div>
-          <WeAreOpen />
-          <span>Come on in! We're open.</span>
-        </div>
         <h2>opening times</h2>
         <div>
           <p>
@@ -20,7 +16,7 @@ export const Footer = () => {
           </p>
         </div>
       </article>
-      <article>section 2</article>
+      <article></article>
       <article>
         <img src={logo} />
       </article>

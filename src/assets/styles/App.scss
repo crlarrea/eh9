@@ -1,7 +1,7 @@
 @import "./UISystem.scss";
 
 .blog {
-  display: none;
+  display: flex;
   overflow-x: scroll;
   scroll-snap-type: x mandatory;
   gap: $s;
@@ -17,12 +17,12 @@
     scroll-snap-align: center;
     border: 2px solid rgba($purple900, 0.2);
     border-radius: $xxs;
-    flex: 0 0 clamp(220px, 280px, 80%);
+    flex: 0 0 clamp(220px, 250px, 80%);
     h3 {
       a {
         color: $purple900;
         text-decoration: none;
-        font-family: "Montserrat Bold";
+        font-family: "Roboto Bold";
       }
     }
     p {
@@ -37,15 +37,18 @@
       margin-top: auto;
       font: {
         size: $xs;
-        family: "Montserrat Regular";
+        family: "Roboto Regular";
       }
       color: black;
     }
   }
 }
 
+.hero,
 nav {
   padding: $h;
+}
+nav {
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
@@ -71,6 +74,72 @@ nav {
   }
   h1 {
     color: $brown900;
+  }
+}
+
+.hero {
+  display: flex;
+  flex-flow: row nowrap;
+  h2 {
+    font: {
+      size: $h;
+    }
+  }
+  article {
+    display: inherit;
+    &:first-of-type {
+      flex: 1 1 40%;
+      flex-flow: column nowrap;
+      row-gap: $m;
+      p {
+        max-width: 35ch;
+        font: {
+          family: "Roboto Light";
+        }
+      }
+      a {
+        display: inline-flex;
+        align-items: center;
+        margin-top: $xxl;
+        column-gap: $xxs;
+        background-color: $purple500;
+        padding: $s $xxl;
+        align-self: flex-start;
+        color: $pink100;
+        border-radius: $s;
+        text: {
+          decoration: none;
+          transform: capitalize;
+        }
+        svg {
+          display: inherit;
+          font: {
+            size: $xl;
+          }
+        }
+      }
+    }
+    &:last-of-type {
+      flex: 1 1 60%;
+      display: flex;
+      justify-content: center;
+      div {
+        background-color: $purple500;
+        padding: $xh;
+        border-radius: 50%;
+        height: 350px;
+        aspect-ratio: 1;
+        position: relative;
+        img {
+          position:absolute;
+          top:-5%;
+          left: -5%;
+          width: 350px;
+          filter: drop-shadow(5px 5px 5px rgba(black, 0.4));
+        }
+      }
+    }
+    // border: 2px solid red;
   }
 }
 
@@ -135,7 +204,7 @@ footer {
     display: flex;
     flex-flow: column nowrap;
     &:first-of-type {
-      h2{
+      h2 {
         padding-bottom: $m;
       }
     }

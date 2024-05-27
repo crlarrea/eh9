@@ -4,6 +4,7 @@ import { Blog } from "../components/Blog";
 import { Article } from "../components/Article";
 import { Nav } from "../components/Nav";
 import { Footer } from "../components/Footer";
+import { Hero } from "../components/Hero";
 
 export const MainRoutes = () => (
   <>
@@ -14,7 +15,15 @@ export const MainRoutes = () => (
 
       <main>
         <Routes>
-          <Route path="/" element={<Blog />} />
+          <Route
+            path="/"
+            element={
+              <>
+                <Hero />
+                <Blog />
+              </>
+            }
+          />
           <Route path="/article/:id" element={<Article />} />
         </Routes>
       </main>
