@@ -140,13 +140,13 @@ nav {
           font: {
             size: $xh;
           }
-          &:first-of-type{
-            left:-5%;
+          &:first-of-type {
+            left: -5%;
           }
-          &:nth-of-type(2){
+          &:nth-of-type(2) {
             left: 15%;
           }
-          &:last-of-type{
+          &:last-of-type {
             left: 50%;
           }
         }
@@ -157,7 +157,6 @@ nav {
           width: 350px;
           filter: drop-shadow(5px 5px 5px rgba(black, 0.4));
         }
-       
       }
     }
     // border: 2px solid red;
@@ -228,8 +227,54 @@ footer {
       h2 {
         padding-bottom: $m;
       }
+      span {
+        font: {
+          family: "Roboto Bold";
+        }
+      }
     }
-    &:nth-of-type(3) {
+    &:nth-of-type(2) {
+      display: inherit;
+      flex-flow: column nowrap;
+      justify-content: center;
+      align-items: center;
+      h3 {
+        font: {
+          family: "Gopher Bold";
+        }
+      }
+      a {
+        color: $brown900;
+        border: 1px solid $brown900;
+        padding: $xxs;
+        border-radius: 100%;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        height: 40px;
+        aspect-ratio: 1;
+
+        &:hover {
+          transition: all 0.3s;
+          background-color: $brown900;
+          color: $pink500;
+        }
+      }
+      div {
+        display: inherit;
+        column-gap: $m;
+        svg {
+          font: {
+            size: $xl;
+          }
+        }
+      }
+      row-gap: $m;
+      padding-bottom: $h;
+    }
+    &:last-of-type {
+      display: inherit;
+      flex-flow: row nowrap;
       img {
         width: 350px;
         height: auto;

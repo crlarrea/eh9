@@ -40,7 +40,7 @@ body {
   background-color: #fffafe;
   color: black;
   border-radius: 48px;
-  width: 1100px;
+  width: 1200px;
   font-family: "Roboto Regular";
 }
 
@@ -247,7 +247,48 @@ footer article {
 footer article:first-of-type h2 {
   padding-bottom: 16px;
 }
-footer article:nth-of-type(3) img {
+footer article:first-of-type span {
+  font-family: "Roboto Bold";
+}
+footer article:nth-of-type(2) {
+  display: inherit;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  row-gap: 16px;
+  padding-bottom: 48px;
+}
+footer article:nth-of-type(2) h3 {
+  font-family: "Gopher Bold";
+}
+footer article:nth-of-type(2) a {
+  color: #644028;
+  border: 1px solid #644028;
+  padding: 7px;
+  border-radius: 100%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  aspect-ratio: 1;
+}
+footer article:nth-of-type(2) a:hover {
+  transition: all 0.3s;
+  background-color: #644028;
+  color: #f3bfb6;
+}
+footer article:nth-of-type(2) div {
+  display: inherit;
+  column-gap: 16px;
+}
+footer article:nth-of-type(2) div svg {
+  font-size: 20px;
+}
+footer article:last-of-type {
+  display: inherit;
+  flex-flow: row nowrap;
+}
+footer article:last-of-type img {
   width: 350px;
   height: auto;
 }
