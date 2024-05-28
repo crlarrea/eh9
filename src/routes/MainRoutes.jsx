@@ -5,7 +5,7 @@ import { Article } from "../components/Article";
 import { Nav } from "../components/Nav";
 import { Footer } from "../components/Footer";
 import { Hero } from "../components/Hero";
-
+import { About } from "../components/About";
 export const MainRoutes = () => (
   <>
     <BrowserRouter>
@@ -25,6 +25,8 @@ export const MainRoutes = () => (
             }
           />
           <Route path="/article/:id" element={<Article />} />
+          <Route path="/about" element={<About />} />
+
         </Routes>
       </main>
       <footer>

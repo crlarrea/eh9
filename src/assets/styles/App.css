@@ -250,6 +250,21 @@ footer article:first-of-type h2 {
 footer article:first-of-type span {
   font-family: "Roboto Bold";
 }
+footer article:first-of-type div {
+  display: inherit;
+  flex-flow: column nowrap;
+  margin-top: 16px;
+  row-gap: 7px;
+}
+footer article:first-of-type div a {
+  display: inline-flex;
+  align-items: center;
+  color: #644028;
+  text-decoration: none;
+}
+footer article:first-of-type div a svg {
+  font-size: 30px;
+}
 footer article:nth-of-type(2) {
   display: inherit;
   flex-flow: column nowrap;
@@ -296,6 +311,28 @@ footer article:last-of-type img {
 h2 {
   font-family: "Gopher Bold";
   text-transform: capitalize;
+}
+
+.about {
+  display: flex;
+  flex-flow: row wrap;
+  padding: 48px;
+}
+.about article {
+  display: inherit;
+  flex-flow: inherit;
+  row-gap: 16px;
+  flex: 0 0 50%;
+  border: 2px dashed red;
+}
+.about h3 {
+  font-family: "Gopher Bold";
+  font-size: 48px;
+  max-width: 15ch;
+  color: #9fa6e5;
+}
+.about p {
+  max-width: 55ch;
 }
 
 /*# sourceMappingURL=App.css.map */

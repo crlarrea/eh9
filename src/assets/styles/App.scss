@@ -232,6 +232,26 @@ footer {
           family: "Roboto Bold";
         }
       }
+
+      div {
+        display: inherit;
+        flex-flow: column nowrap;
+        margin-top: $m;
+        row-gap: $xxs;
+        a {
+          display: inline-flex;
+          align-items: center;
+          color: $brown900;
+          text: {
+            decoration: none;
+          }
+          svg {
+            font: {
+              size: $xxl;
+            }
+          }
+        }
+      }
     }
     &:nth-of-type(2) {
       display: inherit;
@@ -290,5 +310,29 @@ h2 {
   }
   text: {
     transform: capitalize;
+  }
+}
+
+.about {
+  display: flex;
+  flex-flow: row wrap; 
+  padding: $h;
+  article {
+    display: inherit;
+    flex-flow: inherit;
+    row-gap: $m;
+    flex: 0 0 50%;
+  border: 2px dashed red;
+  }
+  h3 {
+    font: {
+      family: "Gopher Bold";
+      size: $h;
+    }
+    max-width: 15ch;
+    color: $purple500;
+  }
+  p {
+    max-width: 55ch;
   }
 }

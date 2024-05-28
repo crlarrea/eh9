@@ -2,6 +2,7 @@ import React from "react";
 import logo from "../assets/img/eh9_logo.webp";
 import { FaTiktok, FaInstagram } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { CiShop } from "react-icons/ci";
 
 export const Footer = () => {
   return (
@@ -15,6 +16,20 @@ export const Footer = () => {
           <p>
             <span>Sat - Sun:</span> 10 AM - 4 PM
           </p>
+          <div>
+            <Link
+              to="https://maps.app.goo.gl/qWCpCSiZWjUNcPbK6"
+              target="_blank"
+            >
+              248, Perth Rd
+            </Link>
+            <Link
+              to="https://maps.app.goo.gl/DKspTeqE4UsHTidn6"
+              target="_blank"
+            >
+              94, Annfield Rd
+            </Link>
+          </div>
         </div>
       </article>
       <article>
