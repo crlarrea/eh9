@@ -160,6 +160,24 @@ nav {
   aspect-ratio: 1;
   position: relative;
 }
+.hero article:last-of-type div svg {
+  position: absolute;
+  background-color: #f3bfb6;
+  padding: 14px;
+  border-radius: 50%;
+  color: #fffafe;
+  z-index: 1;
+  font-size: 60px;
+}
+.hero article:last-of-type div svg:first-of-type {
+  left: -5%;
+}
+.hero article:last-of-type div svg:nth-of-type(2) {
+  left: 15%;
+}
+.hero article:last-of-type div svg:last-of-type {
+  left: 50%;
+}
 .hero article:last-of-type div img {
   position: absolute;
   top: -5%;

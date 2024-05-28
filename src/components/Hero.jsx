@@ -1,6 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { FiArrowRight } from "react-icons/fi";
+import { GoHeartFill } from "react-icons/go";
+import { FaFaceGrinStars } from "react-icons/fa6";
+import { FaStar } from "react-icons/fa6";
+
 import heroImg from "../assets/img/hero_image.webp";
 export const Hero = () => {
   return (
@@ -18,6 +22,9 @@ export const Hero = () => {
       </article>
       <article>
         <div>
+          <GoHeartFill />
+          <FaFaceGrinStars />
+          <FaStar/>
           <img src={heroImg} />
         </div>
       </article>

@@ -130,13 +130,34 @@ nav {
         height: 350px;
         aspect-ratio: 1;
         position: relative;
+        svg {
+          position: absolute;
+          background-color: $pink500;
+          padding: $s;
+          border-radius: 50%;
+          color: $pink100;
+          z-index: 1;
+          font: {
+            size: $xh;
+          }
+          &:first-of-type{
+            left:-5%;
+          }
+          &:nth-of-type(2){
+            left: 15%;
+          }
+          &:last-of-type{
+            left: 50%;
+          }
+        }
         img {
-          position:absolute;
-          top:-5%;
+          position: absolute;
+          top: -5%;
           left: -5%;
           width: 350px;
           filter: drop-shadow(5px 5px 5px rgba(black, 0.4));
         }
+       
       }
     }
     // border: 2px solid red;
