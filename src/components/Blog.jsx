@@ -15,6 +15,8 @@ export const Blog = () => {
 
   return (
     <section className="blog">
+      <h2>Latest</h2>
+      <div>
       {articles.map((entry) => {
         return (
           <article
@@ -34,6 +36,7 @@ export const Blog = () => {
           </article>
         );
       })}
+      </div>
     </section>
   );
 };

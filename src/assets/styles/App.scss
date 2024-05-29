@@ -1,15 +1,30 @@
 @import "./UISystem.scss";
 
 .blog {
-  max-width: 800px;
-  display: flex;
-  overflow-x: scroll;
-  scroll-snap-type: x mandatory;
-  gap: $s;
-  padding: {
-    left: $s;
-    right: $s;
+  h2 {
+    align-self: center;
+    padding-left: $xh;
+    font: {
+      size: $l;
+    }
+    text: {
+      // transform: uppercase;
+    }
   }
+  div {
+    max-width: 850px;
+    display: flex;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    gap: $m;
+    padding: {
+      left: $xh;
+      right: $xh;
+      bottom: $xh;
+      top: $m;
+    }
+  }
+
   article {
     cursor: pointer;
     display: flex;
@@ -20,9 +35,14 @@
     border: 2px solid rgba($purple900, 0.2);
     border-radius: $xxs;
     flex: 0 0 clamp(220px, 250px, 80%);
+    &:hover {
+      transition: all 0.3s;
+      transform: scale(1.1);
+      background-color: rgba($purple500, 0.2);
+    }
+
     h3 {
       color: $purple900;
-      text-decoration: none;
       font-family: "Roboto Bold";
     }
     p {
@@ -31,6 +51,13 @@
         family: "Roboto Light";
       }
       color: black;
+      &:last-of-type {
+        font: {
+          family: "Roboto Black";
+          size: $xs;
+        }
+        color: $purple500;
+      }
     }
 
     span {
@@ -45,6 +72,15 @@
   }
 }
 
+.spotify-player {
+  display: flex;
+  justify-content: center;
+  padding:$h;
+  iframe {
+    border-radius: 12px;
+    max-width: 550px;
+  }
+}
 .hero,
 nav {
   padding: $h;
