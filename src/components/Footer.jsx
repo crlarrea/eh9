@@ -9,28 +9,22 @@ export const Footer = () => {
     <>
       <article>
         <h2>opening times</h2>
-        <div>
-          <p>
-            <span>Mon - Fri:</span> 9 AM - 5 PM
-          </p>
-          <p>
-            <span>Sat - Sun:</span> 10 AM - 4 PM
-          </p>
-          <div>
-            <Link
-              to="https://maps.app.goo.gl/qWCpCSiZWjUNcPbK6"
-              target="_blank"
-            >
-              248, Perth Rd
-            </Link>
-            <Link
-              to="https://maps.app.goo.gl/DKspTeqE4UsHTidn6"
-              target="_blank"
-            >
-              94, Annfield Rd
-            </Link>
-          </div>
-        </div>
+
+        <p>
+          <span>Mon - Fri:</span> 9 AM - 5 PM
+        </p>
+        <p>
+          <span>Sat - Sun:</span> 10 AM - 4 PM
+        </p>
+
+        <p>
+          <Link to="https://maps.app.goo.gl/qWCpCSiZWjUNcPbK6" target="_blank">
+            248-250, Perth Rd
+          </Link>
+          <Link to="https://maps.app.goo.gl/DKspTeqE4UsHTidn6" target="_blank">
+            94, Annfield Rd
+          </Link>
+        </p>
       </article>
       <article>
         <h3>Follow us on</h3>
