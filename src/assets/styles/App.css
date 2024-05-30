@@ -212,7 +212,7 @@ footer {
 }
 .hero article:last-of-type div:last-of-type {
   background-color: rgba(159, 166, 229, 0.3);
-  outline: 2px solid rgba(159, 166, 229, 0.3);
+  outline: 3px dotted rgba(159, 166, 229, 0.3);
   outline-offset: 48px;
   padding: 60px;
   border-radius: 50%;
