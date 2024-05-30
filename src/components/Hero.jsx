@@ -1,9 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { FiArrowRight } from "react-icons/fi";
-import { GoHeartFill } from "react-icons/go";
-import { FaFaceGrinStars } from "react-icons/fa6";
-import { FaStar } from "react-icons/fa6";
+import { Player, Controls } from "@lottiefiles/react-lottie-player";
+import heroAnimation from "../assets/img/hero_animation.json";
 
 import heroImg from "../assets/img/hero_image.webp";
 export const Hero = () => {
@@ -21,10 +20,18 @@ export const Hero = () => {
         </Link>
       </article>
       <article>
+        <Player
+          autoplay
+          loop
+          src={heroAnimation}
+          style={{ height: "300px", width: "300px" }}
+        >
+          <Controls
+            visible={false}
+            buttons={["play", "repeat", "frame", "debug"]}
+          />
+        </Player>
         <div>
-          <GoHeartFill />
-          <FaFaceGrinStars />
-          <FaStar/>
           <img src={heroImg} />
         </div>
       </article>

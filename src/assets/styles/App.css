@@ -202,8 +202,15 @@ footer {
   flex: 1 1 60%;
   display: flex;
   justify-content: center;
+  position: relative;
 }
-.hero article:last-of-type div {
+.hero article:last-of-type div:first-of-type {
+  position: absolute;
+  z-index: 1;
+  bottom: 50px;
+  left: 30px;
+}
+.hero article:last-of-type div:last-of-type {
   background-color: #9fa6e5;
   padding: 60px;
   border-radius: 50%;
@@ -211,62 +218,22 @@ footer {
   aspect-ratio: 1;
   position: relative;
 }
-.hero article:last-of-type div svg {
-  position: absolute;
-  background-color: #f3bfb6;
-  padding: 14px;
-  border-radius: 50%;
-  color: #fffafe;
-  z-index: 1;
-  font-size: 60px;
-}
-.hero article:last-of-type div svg:first-of-type {
-  left: -5%;
-}
-.hero article:last-of-type div svg:nth-of-type(2) {
-  left: 15%;
-}
-.hero article:last-of-type div svg:last-of-type {
-  left: 50%;
-}
-.hero article:last-of-type div img {
+.hero article:last-of-type div:last-of-type img {
   position: absolute;
   top: -5%;
   left: -5%;
   width: 350px;
   filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.4));
-}
-
-.we-are-open {
-  display: block;
-}
-.we-are-open div {
-  position: relative;
-}
-.we-are-open span {
-  position: absolute;
-  height: 20px;
-  aspect-ratio: 1;
-  background-color: #749e81;
-  border-radius: 50%;
-}
-.we-are-open span:first-of-type {
-  animation: pulsatingLight 2.5s linear 0.3s infinite alternate forwards;
-}
-.we-are-open span:nth-of-type(2) {
-  background-color: transparent;
-  border: 2px solid #749e81;
-  animation: pulsatingLight 2.5s linear 0s infinite reverse forwards;
+  z-index: 2;
 }
 
 @keyframes pulsatingLight {
   0% {
     opacity: 0.1;
-    transform: scale(2.3);
   }
   100% {
     opacity: 1;
-    transform: scale(1);
+    transform: scale(1.5);
   }
 }
 .shopping-trolley {

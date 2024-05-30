@@ -184,76 +184,43 @@ footer {
       flex: 1 1 60%;
       display: flex;
       justify-content: center;
+      position: relative;
       div {
-        background-color: $purple500;
-        padding: $xh;
-        border-radius: 50%;
-        height: 350px;
-        aspect-ratio: 1;
-        position: relative;
-        svg {
+        &:first-of-type {
           position: absolute;
-          background-color: $pink500;
-          padding: $s;
-          border-radius: 50%;
-          color: $pink100;
           z-index: 1;
-          font: {
-            size: $xh;
-          }
-          &:first-of-type {
-            left: -5%;
-          }
-          &:nth-of-type(2) {
-            left: 15%;
-          }
-          &:last-of-type {
-            left: 50%;
-          }
+          bottom: 50px;
+          left: 30px;
         }
-        img {
-          position: absolute;
-          top: -5%;
-          left: -5%;
-          width: 350px;
-          filter: drop-shadow(5px 5px 5px rgba(black, 0.4));
+        &:last-of-type {
+          background-color: $purple500;
+          padding: $xh;
+          border-radius: 50%;
+          height: 350px;
+          aspect-ratio: 1;
+          position: relative;
+
+          img {
+            position: absolute;
+            top: -5%;
+            left: -5%;
+            width: 350px;
+            filter: drop-shadow(5px 5px 5px rgba(black, 0.4));
+            z-index: 2;
+          }
         }
       }
     }
-    // border: 2px solid red;
   }
 }
 
-.we-are-open {
-  display: block;
-  div {
-    position: relative;
-  }
-  span {
-    position: absolute;
-    height: $xl;
-    aspect-ratio: 1;
-    background-color: $green900;
-    border-radius: 50%;
-
-    &:first-of-type {
-      animation: pulsatingLight 2.5s linear 0.3s infinite alternate forwards;
-    }
-    &:nth-of-type(2) {
-      background-color: transparent;
-      border: 2px solid $green900;
-      animation: pulsatingLight 2.5s linear 0s infinite reverse forwards;
-    }
-  }
-}
 @keyframes pulsatingLight {
   0% {
     opacity: 0.1;
-    transform: scale(2.3);
   }
   100% {
     opacity: 1;
-    transform: scale(1);
+    transform: scale(1.5);
   }
 }
 
