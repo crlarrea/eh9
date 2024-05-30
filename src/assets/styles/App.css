@@ -211,7 +211,9 @@ footer {
   left: 30px;
 }
 .hero article:last-of-type div:last-of-type {
-  background-color: #9fa6e5;
+  background-color: rgba(159, 166, 229, 0.3);
+  outline: 2px solid rgba(159, 166, 229, 0.3);
+  outline-offset: 48px;
   padding: 60px;
   border-radius: 50%;
   height: 350px;

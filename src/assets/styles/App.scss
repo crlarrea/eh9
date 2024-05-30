@@ -193,7 +193,9 @@ footer {
           left: 30px;
         }
         &:last-of-type {
-          background-color: $purple500;
+          background-color: rgba($purple500,0.3);
+          outline: 2px solid rgba($purple500,0.3);
+          outline-offset: $h;
           padding: $xh;
           border-radius: 50%;
           height: 350px;
