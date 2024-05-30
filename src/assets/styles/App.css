@@ -7,8 +7,8 @@
   src: url("../fonts/Roboto-Regular.ttf");
 }
 @font-face {
-  font-family: "Roboto Light";
-  src: url("../fonts/Roboto-Light.ttf");
+  font-family: "Roboto Thin";
+  src: url("../fonts/Roboto-Thin.ttf");
 }
 @font-face {
   font-family: "Roboto Bold";
@@ -83,7 +83,7 @@ body {
 }
 .blog article p {
   font-size: 14px;
-  font-family: "Roboto Light";
+  font-family: "Roboto Thin";
   color: black;
 }
 .blog article p:last-of-type {
@@ -179,7 +179,7 @@ footer {
 }
 .hero article:first-of-type p {
   max-width: 35ch;
-  font-family: "Roboto Light";
+  font-family: "Roboto Thin";
 }
 .hero article:first-of-type a {
   display: inline-flex;
