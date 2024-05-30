@@ -127,6 +127,7 @@ nav {
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
+  position: relative;
 }
 nav a {
   color: #4252db;
@@ -134,6 +135,16 @@ nav a {
   text-transform: capitalize;
   font-family: "Roboto Black";
   font-size: 18px;
+}
+
+.copyright {
+  position: absolute;
+  right: 0;
+  top: 250px;
+  transform: rotate(90deg);
+}
+.copyright a {
+  text-transform: lowercase;
 }
 
 header,
@@ -229,15 +240,6 @@ footer {
   z-index: 2;
 }
 
-@keyframes pulsatingLight {
-  0% {
-    opacity: 0.1;
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1.5);
-  }
-}
 .shopping-trolley {
   display: flex;
   justify-content: flex-end;

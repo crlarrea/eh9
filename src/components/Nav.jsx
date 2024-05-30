@@ -11,6 +11,10 @@ export const Nav = () => {
       <div className="shopping-trolley">
         <FiShoppingBag />
       </div>
+      <span className="copyright">
+        <Link to="https://crlarrea.github.io" target="_blank">crlarrea &copy; {new Date(Date.now()).getFullYear()}</Link>
+        
+      </span>
     </nav>
   );
 };

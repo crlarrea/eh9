@@ -98,6 +98,7 @@ nav {
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
+  position: relative;
   a {
     color: $purple900;
     text: {
@@ -109,8 +110,17 @@ nav {
       size: $l;
     }
   }
+ 
 }
-
+.copyright{
+  position: absolute;
+  right: 0;
+  top:250px;
+  a{
+    text-transform: lowercase;
+  }
+  transform: rotate(90deg);
+}
 header,
 footer {
   width: 100%;
@@ -216,15 +226,6 @@ footer {
   }
 }
 
-@keyframes pulsatingLight {
-  0% {
-    opacity: 0.1;
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1.5);
-  }
-}
 
 .shopping-trolley {
   display: flex;
