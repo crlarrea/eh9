@@ -100,13 +100,21 @@ body {
 }
 
 .spotify-player {
+  margin-top: 60px;
   display: flex;
   justify-content: center;
   padding: 48px;
+  position: relative;
 }
 .spotify-player iframe {
   border-radius: 12px;
   max-width: 550px;
+}
+.spotify-player div {
+  position: absolute;
+  z-index: 1;
+  left: 55%;
+  top: -49%;
 }
 
 .hero,

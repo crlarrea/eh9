@@ -6,7 +6,8 @@ import { Nav } from "../components/Nav";
 import { Footer } from "../components/Footer";
 import { Hero } from "../components/Hero";
 import { About } from "../components/About";
-import { Spotify } from "../components/Spotify";
+import { SpotifyPlayer } from "../components/SpotifyPlayer";
+
 export const MainRoutes = () => (
   <>
     <BrowserRouter>
@@ -22,7 +23,7 @@ export const MainRoutes = () => (
               <>
                 <Hero />
                 <Blog />
-                <Spotify />
+                <SpotifyPlayer />
               </>
             }
           />
