@@ -108,13 +108,14 @@ body {
 }
 .spotify-player iframe {
   border-radius: 12px;
-  max-width: 550px;
+  width: 800px;
+  height: 450px;
 }
 .spotify-player div {
   position: absolute;
   z-index: 1;
-  left: 55%;
-  top: -49%;
+  left: 65%;
+  top: -22%;
 }
 
 .hero,
@@ -301,23 +302,9 @@ footer article:first-of-type h2 {
 footer article:first-of-type span {
   font-family: "Roboto Bold";
 }
-footer article:first-of-type p:last-child {
-  display: inherit;
-  flex-flow: row wrap;
-  column-gap: 36px;
-  margin-top: 16px;
-}
-footer article:first-of-type p:last-child a {
-  text-decoration: none;
-  text-transform: uppercase;
-  font-size: 14px;
-  font-family: "Roboto Bold";
-  color: #644028;
-}
 footer article:nth-of-type(2) {
   display: inherit;
   flex-flow: column nowrap;
-  justify-content: center;
   align-items: center;
   row-gap: 16px;
   padding-bottom: 48px;
@@ -325,7 +312,14 @@ footer article:nth-of-type(2) {
 footer article:nth-of-type(2) h3 {
   font-family: "Gopher Bold";
 }
-footer article:nth-of-type(2) a {
+footer article:nth-of-type(2) div {
+  display: inherit;
+  column-gap: 16px;
+}
+footer article:nth-of-type(2) div svg {
+  font-size: 20px;
+}
+footer article:nth-of-type(2) div a {
   color: #644028;
   border: 1px solid #644028;
   padding: 7px;
@@ -336,17 +330,31 @@ footer article:nth-of-type(2) a {
   height: 40px;
   aspect-ratio: 1;
 }
-footer article:nth-of-type(2) a:hover {
+footer article:nth-of-type(2) div a:hover {
   transition: all 0.3s;
   background-color: #644028;
   color: #f3bfb6;
 }
-footer article:nth-of-type(2) div {
+footer article:nth-of-type(2) p {
+  border-top: 2px solid #644028;
   display: inherit;
-  column-gap: 16px;
+  flex-flow: row wrap;
+  column-gap: 20px;
+  margin-top: 16px;
 }
-footer article:nth-of-type(2) div svg {
-  font-size: 20px;
+footer article:nth-of-type(2) p a {
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-family: "Roboto Bold";
+  color: rgba(100, 64, 40, 0.6);
+  border: 2px dashed transparent;
+  padding-top: 12px;
+}
+footer article:nth-of-type(2) p a:hover {
+  transition: all 0.3s;
+  color: #644028;
+  transform: scale(1.1);
 }
 footer article:last-of-type {
   display: inherit;

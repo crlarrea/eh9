@@ -17,14 +17,7 @@ export const Footer = () => {
           <span>Sat - Sun:</span> 10 AM - 4 PM
         </p>
 
-        <p>
-          <Link to="https://maps.app.goo.gl/qWCpCSiZWjUNcPbK6" target="_blank">
-            248-250, Perth Rd
-          </Link>
-          <Link to="https://maps.app.goo.gl/DKspTeqE4UsHTidn6" target="_blank">
-            94, Annfield Rd
-          </Link>
-        </p>
+        
       </article>
       <article>
         <h3>Follow us on</h3>
@@ -39,6 +32,14 @@ export const Footer = () => {
             <FaTiktok />
           </Link>
         </div>
+        <p>
+          <Link to="https://maps.app.goo.gl/qWCpCSiZWjUNcPbK6" target="_blank">
+            248-250, Perth Rd
+          </Link>
+          <Link to="https://maps.app.goo.gl/DKspTeqE4UsHTidn6" target="_blank">
+            94, Annfield Rd
+          </Link>
+        </p>
       </article>
       <article>
         <img src={logo} />

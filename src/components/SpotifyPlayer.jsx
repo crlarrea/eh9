@@ -6,6 +6,7 @@ import spotifyAnimation from "../assets/img/spotify_animation.json";
 export const SpotifyPlayer = () => {
   return (
     <section className="spotify-player">
+
       <Player
         autoplay
         loop

@@ -7,9 +7,6 @@
     font: {
       size: $l;
     }
-    text: {
-      // transform: uppercase;
-    }
   }
   div {
     max-width: 850px;
@@ -78,17 +75,18 @@
   justify-content: center;
   padding: $h;
   position: relative;
+
   iframe {
     border-radius: 12px;
-    max-width: 550px;
+    width: 800px;
+    height: 450px;
   }
 
   div {
     position: absolute;
-    // border: 2px solid red;
     z-index: 1;
-    left: 55%;
-    top: -49%;
+    left: 65%;
+    top: -22%;
   }
 }
 .hero,
@@ -131,7 +129,6 @@ footer {
     width: $xh;
     padding: $xxs;
     aspect-ratio: 1;
-    // background-color: $pink900;
     border-radius: 100%;
     overflow: visible;
   }
@@ -296,59 +293,67 @@ footer {
           family: "Roboto Bold";
         }
       }
-      p {
-        &:last-child {
-          display: inherit;
-          flex-flow: row wrap;
-          column-gap: $xxxl;
-          margin-top: $m;
-          a {
-            text: {
-              decoration: none;
-              transform: uppercase;
-            }
-            font: {
-              size: $s;
-              family: "Roboto Bold";
-            }
-            color: $brown900;
-          }
-        }
-      }
     }
     &:nth-of-type(2) {
       display: inherit;
       flex-flow: column nowrap;
-      justify-content: center;
       align-items: center;
       h3 {
         font: {
           family: "Gopher Bold";
         }
       }
-      a {
-        color: $brown900;
-        border: 1px solid $brown900;
-        padding: $xxs;
-        border-radius: 100%;
-        display: inline-flex;
-        justify-content: center;
-        align-items: center;
-        height: 40px;
-        aspect-ratio: 1;
 
-        &:hover {
-          transition: all 0.3s;
-          background-color: $brown900;
-          color: $pink500;
-        }
-      }
       div {
         display: inherit;
         column-gap: $m;
         svg {
           font: {
             size: $xl;
+          }
+        }
+        a {
+          color: $brown900;
+          border: 1px solid $brown900;
+          padding: $xxs;
+          border-radius: 100%;
+          display: inline-flex;
+          justify-content: center;
+          align-items: center;
+          height: 40px;
+          aspect-ratio: 1;
+
+          &:hover {
+            transition: all 0.3s;
+            background-color: $brown900;
+            color: $pink500;
+          }
+        }
+      }
+      p {
+        border-top: 2px solid $brown900;
+
+        display: inherit;
+        flex-flow: row wrap;
+        column-gap: $xl;
+        margin-top: $m;
+        a {
+          text: {
+            decoration: none;
+            transform: uppercase;
+          }
+          font: {
+            size: $s;
+            family: "Roboto Bold";
+          }
+
+          color: rgba($brown900, 0.6);
+          border: 2px dashed transparent;
+          padding-top: $xs;
+          &:hover {
+            transition: all 0.3s;
+            color: $brown900;
+            transform: scale(1.1);
           }
         }
       }
