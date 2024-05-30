@@ -23,13 +23,14 @@ export const MainRoutes = () => (
               <>
                 <Hero />
                 <Blog />
-                <SpotifyPlayer />
               </>
             }
           />
           <Route path="/article/:id" element={<Article />} />
           <Route path="/about" element={<About />} />
+          <Route path="/about" element={<About />} />
         </Routes>
+        <SpotifyPlayer />
       </main>
       <footer>
         <Footer />
