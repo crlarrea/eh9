@@ -69,7 +69,7 @@ body {
   cursor: pointer;
   display: flex;
   flex-flow: column nowrap;
-  row-gap: 7px;
+  row-gap: 14px;
   padding: 48px 14px;
   scroll-snap-align: center;
   border: 2px solid rgba(66, 82, 219, 0.2);
@@ -99,8 +99,8 @@ body {
   align-self: flex-end;
   margin-top: auto;
   font-size: 12px;
-  font-family: "Roboto Regular";
-  color: black;
+  font-family: "Roboto Bold";
+  color: #9fa6e5;
 }
 
 .spotify-player {

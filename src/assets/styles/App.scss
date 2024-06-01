@@ -26,12 +26,13 @@
     cursor: pointer;
     display: flex;
     flex-flow: column nowrap;
-    row-gap: $xxs;
+    row-gap: $s;
     padding: $h $s;
     scroll-snap-align: center;
     border: 2px solid rgba($purple900, 0.2);
     border-radius: $xxs;
     flex: 0 0 clamp(220px, 250px, 80%);
+    
     &:hover {
       transition: all 0.3s;
       transform: scale(1.1);
@@ -56,15 +57,17 @@
         color: $purple500;
       }
     }
+    
+    
 
     span {
       align-self: flex-end;
       margin-top: auto;
       font: {
         size: $xs;
-        family: "Roboto Regular";
+        family: "Roboto Bold";
       }
-      color: black;
+      color: $purple500;
     }
   }
 }
