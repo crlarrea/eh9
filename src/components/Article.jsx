@@ -25,11 +25,18 @@ export const Article = () => {
   return (
     <>
       <section className="blog-article">
-        <article>
-          <h3>{article.title}</h3>
-          <p>{article.body}</p>
-          <img src={article.image} />
-        </article>
+        {Object.keys(article).length !== 0 && (
+          <article>
+            <span>{new Date(article.createdAt).toDateString()}</span>
+            <h3>{article.title}</h3>
+            <span>{article.shortDescription}</span>
+            <span>{article.authors}</span>
+            {article.body.split("\\n").map((paragraph) => {
+              return paragraph !== "" && <p>{paragraph}</p>;
+            })}
+            <img src={article.image} />
+          </article>
+        )}
       </section>
     </>
   );
