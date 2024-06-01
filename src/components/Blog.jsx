@@ -35,7 +35,9 @@ export const Blog = () => {
               <h3>{entry.title}</h3>
               <p>{entry.shortDescription}</p>
               <p>{entry.authors}</p>
-              <span>{entry.createdAt}</span>
+              <span>
+                {new Date(entry.createdAt).toLocaleDateString("en-GB")}
+              </span>
             </article>
           );
         })}
