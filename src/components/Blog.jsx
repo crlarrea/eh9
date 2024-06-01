@@ -1,44 +1,20 @@
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { createClient } from "@supabase/supabase-js";
+const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
+const supabaseKey = import.meta.env.VITE_SUPABASE_KEY;
+const supabase = createClient(supabaseUrl, supabaseKey);
 
 export const Blog = () => {
   const [articles, setArticles] = useState([]);
   const navigate = useNavigate();
   const getArticles = async () => {
-    const myHeaders = new Headers();
-    myHeaders.append("Content-Type", "application/json");
-    myHeaders.append(
-      "Authorization",
-      "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJiYWFzX2RldmljZV9pZCI6IjAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMCIsImJhYXNfZG9tYWluX2lkIjoiNjY1OGVlYWRlNjk5OWUwMDBkNDFmNzM2IiwiZXhwIjoxNzE3MjM1NDg3LCJpYXQiOjE3MTcyMzM2ODcsImlzcyI6IjY2NWFlODE3NzhiMTYwOGM0MDAwYzcyYiIsImp0aSI6IjY2NWFlODE3NzhiMTYwOGM0MDAwYzcyZCIsInN0aXRjaF9kZXZJZCI6IjAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMCIsInN0aXRjaF9kb21haW5JZCI6IjY2NThlZWFkZTY5OTllMDAwZDQxZjczNiIsInN1YiI6IjY2NTlhNDNlYjcyNjA2YjA1YjY3ZGM4YyIsInR5cCI6ImFjY2VzcyJ9.6pFXRgR1bYl7h8I_3UBSpgRWe1HwdFM-UYctU2JKV7w"
-    );
+    let { data: data, error } = await supabase
+      .from("articles")
+      .select("_id,title,shortDescription,author,createdAt")
+      .order("createdAt", { ascending: false });
 
-    const raw = JSON.stringify({
-      collection: "articles",
-      database: "eh9",
-      dataSource: "crlarrea",
-      projection: {
-        _id: 1,
-        title: 1,
-        shortDescription: 1,
-        authors: 1,
-        createdAt: 1,
-      },
-    });
-
-    const requestOptions = {
-      method: "POST",
-      headers: myHeaders,
-      body: raw,
-      redirect: "follow",
-    };
-
-    fetch(
-      "https://eu-central-1.aws.data.mongodb-api.com/app/data-eoqcbhs/endpoint/data/v1/action/find",
-      requestOptions
-    )
-      .then((response) => response.json())
-      .then((result) => setArticles(result.documents))
-      .catch((error) => console.error(error));
+    setArticles(data);
   };
 
   useEffect(() => {
@@ -57,14 +33,10 @@ export const Blog = () => {
                 navigate(`article/${entry._id}`);
               }}
             >
-              <h3>
-                {/* <Link to={`article/${entry._id}`}> */}
-                {entry.title}
-                {/* </Link> */}
-              </h3>
+              <h3>{entry.title}</h3>
               <p>{entry.shortDescription}</p>
-              <p>{entry.authors.join(/\s/)}</p>
-              <span>{entry.createdAt.replaceAll("-", ".")}</span>
+              <p>{entry.author}</p>
+              <span>{entry.createdAt}</span>
             </article>
           );
         })}
