@@ -11,9 +11,8 @@ export const Blog = () => {
   const getArticles = async () => {
     let { data: data, error } = await supabase
       .from("articles")
-      .select("_id,title,shortDescription,author,createdAt")
+      .select("_id,title,shortDescription,authors,createdAt")
       .order("createdAt", { ascending: false });
-
     setArticles(data);
   };
 
@@ -35,7 +34,7 @@ export const Blog = () => {
             >
               <h3>{entry.title}</h3>
               <p>{entry.shortDescription}</p>
-              <p>{entry.author}</p>
+              <p>{entry.authors}</p>
               <span>{entry.createdAt}</span>
             </article>
           );
