@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 export const Blog = () => {
-  console.log("VITE ENV", import.meta.env.VITE_EH9_API);
   const [articles, setArticles] = useState([]);
   const navigate = useNavigate();
   const getArticles = async () => {
