@@ -23,7 +23,7 @@ export const Footer = () => {
         <h3>Follow us on</h3>
         <div>
           <Link
-            to="https://www.instagram.com/eh9.espresso/?hl=en"
+            to="https://www.instagram.com/eh9.espresso"
             target="_blank"
           >
             <FaInstagram />

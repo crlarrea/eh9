@@ -1,6 +1,7 @@
 @import "./UISystem.scss";
 
 .blog {
+  margin-top: $xh;
   h2 {
     align-self: center;
     padding-left: $xh;
@@ -18,8 +19,13 @@
       left: $xh;
       right: $xh;
       bottom: $xh;
-      top: $m;
+      top: $h;
     }
+    ::-webkit-scrollbar {
+      display: none;
+    }
+    -ms-overflow-style: none;
+    scrollbar-width: none;
   }
 
   article {
@@ -28,15 +34,17 @@
     flex-flow: column nowrap;
     row-gap: $s;
     padding: $h $s;
-    scroll-snap-align: center;
+    scroll-snap-align: start;
     border: 2px solid rgba($purple900, 0.2);
     border-radius: $xxs;
     flex: 0 0 clamp(220px, 250px, 80%);
-    
+    height: clamp(220px, 280px, 350px);
+
     &:hover {
       transition: all 0.3s;
       transform: scale(1.1);
       background-color: rgba($purple500, 0.2);
+      box-shadow: 0 0 $s $xxs #2e5bff1a;
     }
 
     h3 {
@@ -44,6 +52,7 @@
       font-family: "Roboto Bold";
     }
     p {
+      display: inline-flex;
       font: {
         size: $s;
         family: "Roboto Thin";
@@ -55,10 +64,10 @@
           size: $xs;
         }
         color: $purple500;
+        border-left: 5px solid $purple500;
+        padding-left: $xxs;
       }
     }
-    
-    
 
     span {
       align-self: flex-end;
@@ -67,6 +76,7 @@
         size: $xs;
         family: "Roboto Bold";
       }
+
       color: $purple500;
     }
   }
@@ -83,14 +93,14 @@
     border-radius: 12px;
     width: 800px;
     height: 450px;
+    box-shadow: 0 $m $m $xxs #2e5bff1a;
   }
 
   div {
     position: absolute;
     z-index: 1;
-    left: 65%;
+    left: 50%;
     top: -59px;
-    // border: 2px solid red;
   }
 }
 .hero,
@@ -113,13 +123,12 @@ nav {
       size: $l;
     }
   }
- 
 }
-.copyright{
+.copyright {
   position: absolute;
   right: 0;
-  top:250px;
-  a{
+  top: 250px;
+  a {
     text-transform: lowercase;
   }
   transform: rotate(90deg);
@@ -206,8 +215,8 @@ footer {
           left: 30px;
         }
         &:last-of-type {
-          background-color: rgba($purple500,0.3);
-          outline: 3px dotted  rgba($purple500,0.3);
+          background-color: rgba($purple500, 0.3);
+          outline: 3px dotted rgba($purple500, 0.3);
           outline-offset: $h;
           padding: $xh;
           border-radius: 50%;
@@ -228,7 +237,6 @@ footer {
     }
   }
 }
-
 
 .shopping-trolley {
   display: flex;
@@ -305,7 +313,7 @@ footer {
         }
       }
       p {
-        border-top: 2px solid $brown900;
+        border-top: 2px solid rgba($brown900, 0.6);
 
         display: inherit;
         flex-flow: row wrap;
@@ -359,6 +367,7 @@ h2 {
   display: flex;
   flex-flow: row wrap;
   padding: $h;
+
   article {
     display: inherit;
     flex-flow: inherit;
@@ -376,5 +385,23 @@ h2 {
   }
   p {
     max-width: 55ch;
+  }
+}
+
+.blog-article {
+  min-height: 1000px;
+  column-count: 2;
+  column-width: 14em;
+  column-gap: $xh;
+  max-width: 800px;
+  border: 2px solid rgba($purple500, 0.2);
+  border-radius: $s;
+  padding: $xh $h;
+  h3 {
+    color: $purple900;
+    font: {
+      size: $xh;
+      family: "Roboto Black";
+    }
   }
 }

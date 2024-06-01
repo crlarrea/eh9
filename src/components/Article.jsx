@@ -14,7 +14,7 @@ export const Article = () => {
     let { data: data, error } = await supabase
       .from("articles")
       .select("*")
-      .eq("_id", id);
+      .eq("id", id);
     setArticle(data[0]);
   };
 
@@ -24,9 +24,12 @@ export const Article = () => {
 
   return (
     <>
-      <section>
-        <h3>{article.title}</h3>
-        <img src={article.image} />
+      <section className="blog-article">
+        <article>
+          <h3>{article.title}</h3>
+          <p>{article.body}</p>
+          <img src={article.image} />
+        </article>
       </section>
     </>
   );

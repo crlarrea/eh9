@@ -11,7 +11,7 @@ export const Blog = () => {
   const getArticles = async () => {
     let { data: data, error } = await supabase
       .from("articles")
-      .select("_id,title,shortDescription,authors,createdAt, image")
+      .select("id,title,shortDescription,authors,createdAt, image")
       .order("createdAt", { ascending: false });
     setArticles(data);
   };
@@ -27,9 +27,9 @@ export const Blog = () => {
         {articles.map((entry) => {
           return (
             <article
-              key={entry._id}
+              key={entry.id}
               onClick={() => {
-                navigate(`article/${entry._id}`);
+                navigate(`article/${entry.id}`);
               }}
             >
               <h3>{entry.title}</h3>

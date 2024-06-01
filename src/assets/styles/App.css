@@ -47,8 +47,12 @@ body {
   border-radius: 48px;
   width: 1200px;
   font-family: "Roboto Regular";
+  box-shadow: 0 16px 16px 14px rgba(46, 91, 255, 0.1019607843);
 }
 
+.blog {
+  margin-top: 60px;
+}
 .blog h2 {
   align-self: center;
   padding-left: 60px;
@@ -63,7 +67,12 @@ body {
   padding-left: 60px;
   padding-right: 60px;
   padding-bottom: 60px;
-  padding-top: 16px;
+  padding-top: 48px;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.blog div ::-webkit-scrollbar {
+  display: none;
 }
 .blog article {
   cursor: pointer;
@@ -71,21 +80,24 @@ body {
   flex-flow: column nowrap;
   row-gap: 14px;
   padding: 48px 14px;
-  scroll-snap-align: center;
+  scroll-snap-align: start;
   border: 2px solid rgba(66, 82, 219, 0.2);
   border-radius: 7px;
   flex: 0 0 clamp(220px, 250px, 80%);
+  height: 280px;
 }
 .blog article:hover {
   transition: all 0.3s;
   transform: scale(1.1);
   background-color: rgba(159, 166, 229, 0.2);
+  box-shadow: 0 0 14px 7px rgba(46, 91, 255, 0.1019607843);
 }
 .blog article h3 {
   color: #4252db;
   font-family: "Roboto Bold";
 }
 .blog article p {
+  display: inline-flex;
   font-size: 14px;
   font-family: "Roboto Thin";
   color: black;
@@ -94,6 +106,8 @@ body {
   font-family: "Roboto Black";
   font-size: 12px;
   color: #9fa6e5;
+  border-left: 5px solid #9fa6e5;
+  padding-left: 7px;
 }
 .blog article span {
   align-self: flex-end;
@@ -114,11 +128,12 @@ body {
   border-radius: 12px;
   width: 800px;
   height: 450px;
+  box-shadow: 0 16px 16px 7px rgba(46, 91, 255, 0.1019607843);
 }
 .spotify-player div {
   position: absolute;
   z-index: 1;
-  left: 65%;
+  left: 50%;
   top: -59px;
 }
 
@@ -311,7 +326,7 @@ footer article:nth-of-type(2) div a:hover {
   color: #f3bfb6;
 }
 footer article:nth-of-type(2) p {
-  border-top: 2px solid #644028;
+  border-top: 2px solid rgba(100, 64, 40, 0.6);
   display: inherit;
   flex-flow: row wrap;
   column-gap: 20px;
@@ -365,6 +380,22 @@ h2 {
 }
 .about p {
   max-width: 55ch;
+}
+
+.blog-article {
+  min-height: 1000px;
+  column-count: 2;
+  column-width: 14em;
+  column-gap: 60px;
+  max-width: 800px;
+  border: 2px solid rgba(159, 166, 229, 0.2);
+  border-radius: 14px;
+  padding: 60px 48px;
+}
+.blog-article h3 {
+  color: #4252db;
+  font-size: 60px;
+  font-family: "Roboto Black";
 }
 
 /*# sourceMappingURL=App.css.map */
