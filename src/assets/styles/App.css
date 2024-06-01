@@ -195,6 +195,7 @@ footer {
 .hero {
   display: flex;
   flex-flow: row nowrap;
+  width: 100%;
 }
 .hero h2 {
   font-size: 48px;

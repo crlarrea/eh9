@@ -163,6 +163,7 @@ footer {
 .hero {
   display: flex;
   flex-flow: row nowrap;
+  width: 100%;
   h2 {
     font: {
       size: $h;
@@ -170,6 +171,7 @@ footer {
   }
   article {
     display: inherit;
+    
     &:first-of-type {
       flex: 1 1 40%;
       flex-flow: column nowrap;
