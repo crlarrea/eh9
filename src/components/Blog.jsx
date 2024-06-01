@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { getData } from "../utils/requests";
 import { Link, useNavigate } from "react-router-dom";
 
 export const Blog = () => {
+  console.log("VITE ENV", import.meta.env.VITE_EH9_API);
   const [articles, setArticles] = useState([]);
   const navigate = useNavigate();
   const getArticles = async () => {
@@ -10,7 +10,7 @@ export const Blog = () => {
     myHeaders.append("Content-Type", "application/json");
     myHeaders.append(
       "Authorization",
-      "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJiYWFzX2RldmljZV9pZCI6IjAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMCIsImJhYXNfZG9tYWluX2lkIjoiNjY1OGVlYWRlNjk5OWUwMDBkNDFmNzM2IiwiZXhwIjoxNzE3MTUyNjU5LCJpYXQiOjE3MTcxNTA4NTksImlzcyI6IjY2NTlhNDhiZTY5OTllMDAwZDMzZGFiYyIsImp0aSI6IjY2NTlhNDhiZTY5OTllMDAwZDMzZGFkOCIsInN0aXRjaF9kZXZJZCI6IjAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMCIsInN0aXRjaF9kb21haW5JZCI6IjY2NThlZWFkZTY5OTllMDAwZDQxZjczNiIsInN1YiI6IjY2NTlhNDNlYjcyNjA2YjA1YjY3ZGM4YyIsInR5cCI6ImFjY2VzcyJ9.X5EADaxSFTCFW2pGwcaaFEpBj4lc52eEa5yiUiwJwlw"
+      "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJiYWFzX2RldmljZV9pZCI6IjAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMCIsImJhYXNfZG9tYWluX2lkIjoiNjY1OGVlYWRlNjk5OWUwMDBkNDFmNzM2IiwiZXhwIjoxNzE3MjM1NDg3LCJpYXQiOjE3MTcyMzM2ODcsImlzcyI6IjY2NWFlODE3NzhiMTYwOGM0MDAwYzcyYiIsImp0aSI6IjY2NWFlODE3NzhiMTYwOGM0MDAwYzcyZCIsInN0aXRjaF9kZXZJZCI6IjAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMCIsInN0aXRjaF9kb21haW5JZCI6IjY2NThlZWFkZTY5OTllMDAwZDQxZjczNiIsInN1YiI6IjY2NTlhNDNlYjcyNjA2YjA1YjY3ZGM4YyIsInR5cCI6ImFjY2VzcyJ9.6pFXRgR1bYl7h8I_3UBSpgRWe1HwdFM-UYctU2JKV7w"
     );
 
     const raw = JSON.stringify({
