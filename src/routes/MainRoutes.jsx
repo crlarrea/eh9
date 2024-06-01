@@ -7,6 +7,7 @@ import { Footer } from "../components/Footer";
 import { Hero } from "../components/Hero";
 import { About } from "../components/About";
 import { SpotifyPlayer } from "../components/SpotifyPlayer";
+import { Menu } from "../components/Menu";
 
 export const MainRoutes = () => (
   <>
@@ -22,6 +23,7 @@ export const MainRoutes = () => (
             element={
               <>
                 <Hero />
+                <Menu/>
                 <Blog />
               </>
             }

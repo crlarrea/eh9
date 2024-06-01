@@ -100,12 +100,10 @@ body {
   display: inline-flex;
   font-size: 14px;
   font-family: "Roboto Thin";
-  color: black;
 }
 .blog article p:last-of-type {
   font-family: "Roboto Black";
   font-size: 12px;
-  color: black;
   border-left: 5px solid #9fa6e5;
   padding-left: 7px;
 }
@@ -224,6 +222,7 @@ footer {
   border-radius: 14px;
   text-decoration: none;
   text-transform: capitalize;
+  box-shadow: 0 7px 16px 7px rgba(46, 91, 255, 0.1019607843);
 }
 .hero article:first-of-type a svg {
   display: inherit;
@@ -242,8 +241,9 @@ footer {
   left: 30px;
 }
 .hero article:last-of-type div:last-of-type {
-  background-color: rgba(159, 166, 229, 0.3);
-  outline: 3px dotted rgba(159, 166, 229, 0.3);
+  background-color: rgba(66, 82, 219, 0.3);
+  background-color: rgba(243, 191, 182, 0.4);
+  outline: 4px dotted rgba(159, 166, 229, 0.3);
   outline-offset: 48px;
   padding: 60px;
   border-radius: 50%;

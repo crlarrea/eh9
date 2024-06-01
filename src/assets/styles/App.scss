@@ -57,13 +57,11 @@
         size: $s;
         family: "Roboto Thin";
       }
-      color: black;
       &:last-of-type {
         font: {
           family: "Roboto Black";
           size: $xs;
         }
-        color: black;
         border-left: 5px solid $purple500;
         padding-left: $xxs;
       }
@@ -202,6 +200,7 @@ footer {
             size: $xl;
           }
         }
+        box-shadow: 0 $xxs $m $xxs #2e5bff1a;
       }
     }
     &:last-of-type {
@@ -217,8 +216,9 @@ footer {
           left: 30px;
         }
         &:last-of-type {
-          background-color: rgba($purple500, 0.3);
-          outline: 3px dotted rgba($purple500, 0.3);
+          background-color: rgba($purple900, 0.3);
+          background-color: rgba($pink500,0.4);
+          outline: 4px dotted rgba($purple500, 0.3);
           outline-offset: $h;
           padding: $xh;
           border-radius: 50%;

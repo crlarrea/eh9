@@ -27,12 +27,12 @@ export const Article = () => {
       <section className="blog-article">
         {Object.keys(article).length !== 0 && (
           <article>
-            <span>{new Date(article.createdAt).toDateString()}</span>
+            <span>{new Date(article.created_at).toDateString()}</span>
             <h3>{article.title}</h3>
-            <span>{article.shortDescription}</span>
+            <span>{article.short_description}</span>
             <span>{article.authors}</span>
-            {article.body.split("\\n").map((paragraph) => {
-              return paragraph !== "" && <p>{paragraph}</p>;
+            {article.body.split("\\n").map((paragraph, index) => {
+              return paragraph !== "" && <p key={index}>{paragraph}</p>;
             })}
             <img src={article.image} />
           </article>
