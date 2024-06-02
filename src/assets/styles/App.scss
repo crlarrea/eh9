@@ -414,16 +414,18 @@ h2 {
         }
         &:nth-of-type(2n) {
           flex: 0 0 60%;
-          
         }
-        &:nth-of-type(3n+1){
-          filter:hue-rotate(90deg);
+        &:nth-of-type(3n + 1) {
+          filter: hue-rotate(90deg);
         }
-        &:last-of-type{
+        &:last-of-type {
           flex: 0 0 100%;
-          img{
+          height: 350px;
+          img {
             width: 100%;
           }
+        }
+        img {
         }
       }
     }

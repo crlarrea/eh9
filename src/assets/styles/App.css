@@ -411,16 +411,16 @@ h2 {
 .about article:last-of-type div:nth-of-type(2n) {
   flex: 0 0 60%;
 }
-.about article:last-of-type div:nth-of-type(3n+1) {
+.about article:last-of-type div:nth-of-type(3n + 1) {
   filter: hue-rotate(90deg);
 }
 .about article:last-of-type div:last-of-type {
   flex: 0 0 100%;
+  height: 350px;
 }
 .about article:last-of-type div:last-of-type img {
   width: 100%;
 }
-
 .blog-article {
   min-height: 1000px;
   column-count: 2;
