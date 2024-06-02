@@ -480,7 +480,6 @@ h2 {
     font: {
       size: $h;
     }
-    
   }
   article {
     &:first-of-type {
@@ -520,12 +519,13 @@ h2 {
       div {
         position: absolute;
         bottom: 0;
-        right: 40%;
+        right: -100%;
+        z-index: 0;
       }
     }
     &:last-of-type {
       padding: $h;
-      flex: 1 1 70%;
+      flex: 1 0 50%;
       background-color: rgba($pink500, 0.5);
       h3 {
         font: {

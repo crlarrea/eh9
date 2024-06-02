@@ -489,11 +489,12 @@ h2 {
 .menu article:nth-of-type(2) div {
   position: absolute;
   bottom: 0;
-  right: 40%;
+  right: -100%;
+  z-index: 0;
 }
 .menu article:last-of-type {
   padding: 48px;
-  flex: 1 1 70%;
+  flex: 1 0 50%;
   background-color: rgba(243, 191, 182, 0.5);
 }
 .menu article:last-of-type h3 {
