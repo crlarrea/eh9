@@ -169,7 +169,7 @@ footer {
   }
   article {
     display: inherit;
-    
+
     &:first-of-type {
       flex: 1 1 40%;
       flex-flow: column nowrap;
@@ -181,15 +181,6 @@ footer {
         }
       }
       a {
-        display: inline-flex;
-        align-items: center;
-        margin-top: $xxl;
-        column-gap: $xxs;
-        background-color: $purple500;
-        padding: $s $xxl;
-        align-self: flex-start;
-        color: $pink100;
-        border-radius: $s;
         text: {
           decoration: none;
           transform: capitalize;
@@ -217,7 +208,7 @@ footer {
         }
         &:last-of-type {
           background-color: rgba($purple900, 0.3);
-          background-color: rgba($pink500,0.4);
+          background-color: rgba($pink500, 0.4);
           outline: 4px dotted rgba($purple500, 0.3);
           outline-offset: $h;
           padding: $xh;
@@ -359,6 +350,18 @@ footer {
   background-color: $pink500;
 }
 
+.btn {
+  display: inline-flex;
+  align-items: center;
+  margin-top: $xxl;
+  column-gap: $xxs;
+  background-color: $purple500;
+  padding: $s $xxl;
+  align-self: flex-start;
+  color: $pink100;
+  border-radius: $s;
+}
+
 h2 {
   font: {
     family: "Gopher Bold";
@@ -459,5 +462,101 @@ h2 {
   img {
     width: 100%;
     padding-top: $xh;
+  }
+}
+
+.menu {
+  display: flex;
+  min-width: 850px;
+  height: 450px;
+  margin: {
+    top: $xh;
+    bottom: $xh;
+  }
+  border: 2px solid rgba($pink500, 0.3);
+  border-radius: $xs;
+  padding: $h;
+  h2 {
+    font: {
+      size: $h;
+    }
+  }
+  article {
+    flex: 1 1 50%;
+
+    &:first-of-type {
+      display: inherit;
+      flex-flow: column nowrap;
+      row-gap: $l;
+      button {
+        display: inline-flex;
+        align-items: center;
+        column-gap: $xxs;
+        text-transform: capitalize;
+        align-self: flex-start;
+        border: none;
+        margin-top: 0;
+        padding: $xxs $m;
+        border-radius: $xxs;
+        width: 150px;
+        font: {
+          size: $m;
+          family: "Roboto Light";
+        }
+
+        svg {
+          font: {
+            size: $xxl;
+          }
+        }
+        cursor: pointer;
+      }
+    }
+    .active {
+      transition: all 0.3s;
+      background-color: $pink900;
+      svg {
+        color: $pink100;
+      }
+      box-shadow: 0 0 $xl $xxs rgba($pink900, 0.3);
+      color: $pink100;
+    }
+    .inactive {
+      color: $brown900;
+      background-color: $pink100;
+      svg {
+        color: $brown900;
+      }
+    }
+    &:last-of-type {
+      h3 {
+        font: {
+          size: $xxl;
+          family: "Gopher Bold";
+        }
+        color: $brown900;
+      }
+      table {
+        font: {
+          family: "Gopher Bold";
+        }
+        text: {
+          transform: uppercase;
+        }
+        th {
+          visibility: hidden;
+        }
+        tr {
+          td {
+            padding-bottom: $xxs;
+            &:nth-of-type(odd) {
+            }
+            &:nth-of-type(even) {
+              padding-left: $h;
+            }
+          }
+        }
+      }
+    }
   }
 }

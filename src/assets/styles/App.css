@@ -211,15 +211,6 @@ footer {
   font-family: "Roboto Thin";
 }
 .hero article:first-of-type a {
-  display: inline-flex;
-  align-items: center;
-  margin-top: 30px;
-  column-gap: 7px;
-  background-color: #9fa6e5;
-  padding: 14px 30px;
-  align-self: flex-start;
-  color: #fffafe;
-  border-radius: 14px;
   text-decoration: none;
   text-transform: capitalize;
   box-shadow: 0 7px 16px 7px rgba(46, 91, 255, 0.1019607843);
@@ -359,6 +350,18 @@ footer article:last-of-type img {
   height: auto;
 }
 
+.btn {
+  display: inline-flex;
+  align-items: center;
+  margin-top: 30px;
+  column-gap: 7px;
+  background-color: #9fa6e5;
+  padding: 14px 30px;
+  align-self: flex-start;
+  color: #fffafe;
+  border-radius: 14px;
+}
+
 h2 {
   font-family: "Gopher Bold";
   text-transform: capitalize;
@@ -440,6 +443,80 @@ h2 {
 .blog-article img {
   width: 100%;
   padding-top: 60px;
+}
+
+.menu {
+  display: flex;
+  min-width: 850px;
+  height: 450px;
+  margin-top: 60px;
+  margin-bottom: 60px;
+  border: 2px solid rgba(243, 191, 182, 0.3);
+  border-radius: 12px;
+  padding: 48px;
+}
+.menu h2 {
+  font-size: 48px;
+}
+.menu article {
+  flex: 1 1 50%;
+}
+.menu article:first-of-type {
+  display: inherit;
+  flex-flow: column nowrap;
+  row-gap: 18px;
+}
+.menu article:first-of-type button {
+  display: inline-flex;
+  align-items: center;
+  column-gap: 7px;
+  text-transform: capitalize;
+  align-self: flex-start;
+  border: none;
+  margin-top: 0;
+  padding: 7px 16px;
+  border-radius: 7px;
+  width: 150px;
+  font-size: 16px;
+  font-family: "Roboto Light";
+  cursor: pointer;
+}
+.menu article:first-of-type button svg {
+  font-size: 30px;
+}
+.menu article .active {
+  transition: all 0.3s;
+  background-color: #ff8cc3;
+  box-shadow: 0 0 20px 7px rgba(255, 140, 195, 0.3);
+  color: #fffafe;
+}
+.menu article .active svg {
+  color: #fffafe;
+}
+.menu article .inactive {
+  color: #644028;
+  background-color: #fffafe;
+}
+.menu article .inactive svg {
+  color: #644028;
+}
+.menu article:last-of-type h3 {
+  font-size: 30px;
+  font-family: "Gopher Bold";
+  color: #644028;
+}
+.menu article:last-of-type table {
+  font-family: "Gopher Bold";
+  text-transform: uppercase;
+}
+.menu article:last-of-type table th {
+  visibility: hidden;
+}
+.menu article:last-of-type table tr td {
+  padding-bottom: 7px;
+}
+.menu article:last-of-type table tr td:nth-of-type(even) {
+  padding-left: 48px;
 }
 
 /*# sourceMappingURL=App.css.map */
