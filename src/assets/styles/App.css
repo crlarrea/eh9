@@ -504,6 +504,7 @@ h2 {
   border-bottom: 2px solid #644028;
 }
 .menu article:last-of-type table {
+  width: 100%;
   font-family: "Gopher Bold";
   text-transform: uppercase;
 }
@@ -515,6 +516,7 @@ h2 {
 }
 .menu article:last-of-type table tr td:nth-of-type(even) {
   padding-left: 48px;
+  text-align: end;
 }
 
 .active {

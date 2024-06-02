@@ -536,6 +536,7 @@ h2 {
         border-bottom: 2px solid $brown900;
       }
       table {
+        width: 100%;
         font: {
           family: "Gopher Bold";
         }
@@ -552,6 +553,7 @@ h2 {
             }
             &:nth-of-type(even) {
               padding-left: $h;
+              text-align: end;
             }
           }
         }
