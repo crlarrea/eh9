@@ -488,6 +488,7 @@ h2 {
       display: inherit;
       flex-flow: column nowrap;
       row-gap: $l;
+      z-index: 1;
       button {
         transition: all 0.5s;
         display: inline-flex;
@@ -518,14 +519,13 @@ h2 {
 
       div {
         position: absolute;
-        bottom: 0;
-        right: -100%;
-        z-index: 0;
+        bottom: -10%;
+        right: 10%;
       }
     }
     &:last-of-type {
       padding: $h;
-      flex: 1 0 50%;
+      flex: 1 0 60%;
       background-color: rgba($pink500, 0.5);
       h3 {
         font: {
@@ -546,16 +546,21 @@ h2 {
         th {
           visibility: hidden;
         }
-        tr {
+        td{
+          vertical-align: text-top;
+          padding-top: $xxs;
+        }
+        tr:nth-of-type(8) {
           td {
-            padding-bottom: $xxs;
-            &:nth-of-type(odd) {
-            }
-            &:nth-of-type(even) {
-              padding-left: $h;
-              text-align: end;
-            }
+            padding-top: $h;
           }
+        }
+        td:nth-of-type(2) {
+          // background-color: red;
+          font: {
+            family: "Roboto Thin";
+          }
+          text-transform: lowercase;
         }
       }
     }

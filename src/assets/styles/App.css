@@ -463,6 +463,7 @@ h2 {
   display: inherit;
   flex-flow: column nowrap;
   row-gap: 18px;
+  z-index: 1;
 }
 .menu article:first-of-type button {
   transition: all 0.5s;
@@ -488,13 +489,12 @@ h2 {
 }
 .menu article:nth-of-type(2) div {
   position: absolute;
-  bottom: 0;
-  right: -100%;
-  z-index: 0;
+  bottom: -10%;
+  right: 10%;
 }
 .menu article:last-of-type {
   padding: 48px;
-  flex: 1 0 50%;
+  flex: 1 0 60%;
   background-color: rgba(243, 191, 182, 0.5);
 }
 .menu article:last-of-type h3 {
@@ -511,12 +511,16 @@ h2 {
 .menu article:last-of-type table th {
   visibility: hidden;
 }
-.menu article:last-of-type table tr td {
-  padding-bottom: 7px;
+.menu article:last-of-type table td {
+  vertical-align: text-top;
+  padding-top: 7px;
 }
-.menu article:last-of-type table tr td:nth-of-type(even) {
-  padding-left: 48px;
-  text-align: end;
+.menu article:last-of-type table tr:nth-of-type(8) td {
+  padding-top: 48px;
+}
+.menu article:last-of-type table td:nth-of-type(2) {
+  font-family: "Roboto Thin";
+  text-transform: lowercase;
 }
 
 .active {

@@ -14,7 +14,13 @@ export const Hero = () => {
           Popayan Reserve, Colombia/Washed Roasted by Lucid Coffee Roasters -
           Belfast.
         </p>
-        <Link to="/order" className="btn">
+        <Link
+          to="/#menu"
+          onClick={() => {
+            scrollTo("#menu");
+          }}
+          className="btn"
+        >
           order now
           <FiArrowRight />
         </Link>

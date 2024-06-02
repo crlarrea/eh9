@@ -4,7 +4,7 @@ const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
 const supabaseKey = import.meta.env.VITE_SUPABASE_KEY;
 const supabase = createClient(supabaseUrl, supabaseKey);
 import { Player, Controls } from "@lottiefiles/react-lottie-player";
-import menuAnimation from "../assets/img/menu_animation.json";
+import menuAnimation from "../assets/img/menu_animation_2.json";
 import { GiCoffeePot } from "react-icons/gi";
 import { GiTeapotLeaves } from "react-icons/gi";
 import { GiSandwich } from "react-icons/gi";
@@ -33,7 +33,7 @@ export const Menu = () => {
   }, []);
 
   return (
-    <section className="menu">
+    <section className="menu" id="menu">
       <article>
         <h2>Our Menu</h2>
         {types.map((button) => {
@@ -62,8 +62,8 @@ export const Menu = () => {
           autoplay
           loop
           src={menuAnimation}
-          style={{ height: "300px", width: "300px" }}
-          speed={0.2}
+          style={{ height: "250px", width: "250px" }}
+          speed={2}
         >
           <Controls
             visible={false}
@@ -73,6 +73,7 @@ export const Menu = () => {
       </article>
       <article>
         <h3>{menuView.length !== 0 && menuView[0].type}</h3>
+
         <table>
           <tbody>
             <tr>
@@ -83,6 +84,9 @@ export const Menu = () => {
               return (
                 <tr key={item.item_name}>
                   <td>{item.item_name}</td>
+                  <td key={`ingredients-${item.item_name}`}>
+                    {item.ingredients !== null && item.ingredients.join(", ")}
+                  </td>
                   <td>
                     {new Intl.NumberFormat("en-GB", {
                       style: "currency",
