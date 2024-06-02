@@ -467,28 +467,30 @@ h2 {
 
 .menu {
   display: flex;
-  min-width: 850px;
-  height: 450px;
+  width: 850px;
+  height: 550px;
   margin: {
     top: $xh;
     bottom: $xh;
   }
   border: 2px solid rgba($pink500, 0.3);
   border-radius: $xs;
-  padding: $h;
+
   h2 {
     font: {
       size: $h;
     }
+    
   }
   article {
-    flex: 1 1 50%;
-
     &:first-of-type {
+      padding: $h;
+      flex: 1 0 40%;
       display: inherit;
       flex-flow: column nowrap;
       row-gap: $l;
       button {
+        transition: all 0.5s;
         display: inline-flex;
         align-items: center;
         column-gap: $xxs;
@@ -501,7 +503,6 @@ h2 {
         width: 150px;
         font: {
           size: $m;
-          family: "Roboto Light";
         }
 
         svg {
@@ -512,29 +513,27 @@ h2 {
         cursor: pointer;
       }
     }
-    .active {
-      transition: all 0.3s;
-      background-color: $pink900;
-      svg {
-        color: $pink100;
-      }
-      box-shadow: 0 0 $xl $xxs rgba($pink900, 0.3);
-      color: $pink100;
-    }
-    .inactive {
-      color: $brown900;
-      background-color: $pink100;
-      svg {
-        color: $brown900;
+    &:nth-of-type(2) {
+      flex: 1 1 40%;
+      position: relative;
+
+      div {
+        position: absolute;
+        bottom: 0;
+        right: 40%;
       }
     }
     &:last-of-type {
+      padding: $h;
+      flex: 1 1 70%;
+      background-color: rgba($pink500, 0.5);
       h3 {
         font: {
           size: $xxl;
           family: "Gopher Bold";
         }
         color: $brown900;
+        border-bottom: 2px solid $brown900;
       }
       table {
         font: {
@@ -558,5 +557,27 @@ h2 {
         }
       }
     }
+  }
+}
+.active {
+  transition: all 0.3s;
+  background-color: $pink900;
+  svg {
+    color: $pink100;
+  }
+  box-shadow: 0 0 $xl $xxs rgba($pink900, 0.3);
+  color: $pink100;
+  font: {
+    family: "Roboto Bold";
+  }
+}
+.inactive {
+  color: $brown900;
+  background-color: $pink100;
+  font: {
+    family: "Roboto Light";
+  }
+  svg {
+    color: $brown900;
   }
 }

@@ -447,26 +447,25 @@ h2 {
 
 .menu {
   display: flex;
-  min-width: 850px;
-  height: 450px;
+  width: 850px;
+  height: 550px;
   margin-top: 60px;
   margin-bottom: 60px;
   border: 2px solid rgba(243, 191, 182, 0.3);
   border-radius: 12px;
-  padding: 48px;
 }
 .menu h2 {
   font-size: 48px;
 }
-.menu article {
-  flex: 1 1 50%;
-}
 .menu article:first-of-type {
+  padding: 48px;
+  flex: 1 0 40%;
   display: inherit;
   flex-flow: column nowrap;
   row-gap: 18px;
 }
 .menu article:first-of-type button {
+  transition: all 0.5s;
   display: inline-flex;
   align-items: center;
   column-gap: 7px;
@@ -478,32 +477,30 @@ h2 {
   border-radius: 7px;
   width: 150px;
   font-size: 16px;
-  font-family: "Roboto Light";
   cursor: pointer;
 }
 .menu article:first-of-type button svg {
   font-size: 30px;
 }
-.menu article .active {
-  transition: all 0.3s;
-  background-color: #ff8cc3;
-  box-shadow: 0 0 20px 7px rgba(255, 140, 195, 0.3);
-  color: #fffafe;
+.menu article:nth-of-type(2) {
+  flex: 1 1 40%;
+  position: relative;
 }
-.menu article .active svg {
-  color: #fffafe;
+.menu article:nth-of-type(2) div {
+  position: absolute;
+  bottom: 0;
+  right: 40%;
 }
-.menu article .inactive {
-  color: #644028;
-  background-color: #fffafe;
-}
-.menu article .inactive svg {
-  color: #644028;
+.menu article:last-of-type {
+  padding: 48px;
+  flex: 1 1 70%;
+  background-color: rgba(243, 191, 182, 0.5);
 }
 .menu article:last-of-type h3 {
   font-size: 30px;
   font-family: "Gopher Bold";
   color: #644028;
+  border-bottom: 2px solid #644028;
 }
 .menu article:last-of-type table {
   font-family: "Gopher Bold";
@@ -517,6 +514,26 @@ h2 {
 }
 .menu article:last-of-type table tr td:nth-of-type(even) {
   padding-left: 48px;
+}
+
+.active {
+  transition: all 0.3s;
+  background-color: #ff8cc3;
+  box-shadow: 0 0 20px 7px rgba(255, 140, 195, 0.3);
+  color: #fffafe;
+  font-family: "Roboto Bold";
+}
+.active svg {
+  color: #fffafe;
+}
+
+.inactive {
+  color: #644028;
+  background-color: #fffafe;
+  font-family: "Roboto Light";
+}
+.inactive svg {
+  color: #644028;
 }
 
 /*# sourceMappingURL=App.css.map */
