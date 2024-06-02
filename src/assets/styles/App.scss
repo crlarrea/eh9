@@ -378,21 +378,55 @@ h2 {
 
   article {
     display: inherit;
-    flex-flow: inherit;
-    row-gap: $m;
     flex: 0 0 50%;
-    border: 2px dashed red;
-  }
-  h3 {
-    font: {
-      family: "Gopher Bold";
-      size: $h;
+    &:first-of-type {
+      flex-flow: inherit;
+      row-gap: $m;
+      h3 {
+        margin-top: $h;
+        font: {
+          family: "Gopher Bold";
+          size: $h;
+        }
+        max-width: 15ch;
+        color: $purple500;
+      }
+      p {
+        max-width: 55ch;
+      }
     }
-    max-width: 15ch;
-    color: $purple500;
-  }
-  p {
-    max-width: 55ch;
+    &:last-of-type {
+      flex: 0 0 50%;
+      flex-flow: row wrap;
+      align-content: center;
+      justify-content: center;
+      row-gap: $xxs;
+      column-gap: $xxs;
+
+      div {
+        flex: 0 0 25%;
+        height: 200px;
+        border-radius: $xxs;
+        overflow: hidden;
+        transition: all 0.3s;
+        &:nth-of-type(3n-1) {
+          filter: grayscale(1);
+        }
+        &:nth-of-type(2n) {
+          flex: 0 0 60%;
+          
+        }
+        &:nth-of-type(3n+1){
+          filter:hue-rotate(90deg);
+        }
+        &:last-of-type{
+          flex: 0 0 100%;
+          img{
+            width: 100%;
+          }
+        }
+      }
+    }
   }
 }
 
@@ -468,7 +502,7 @@ h2 {
 .menu {
   display: flex;
   width: 850px;
-  height: 550px;
+  min-height: 650px;
   margin: {
     top: $xh;
     bottom: $xh;
@@ -519,7 +553,7 @@ h2 {
 
       div {
         position: absolute;
-        bottom: -10%;
+        bottom: -7%;
         right: 10%;
       }
     }
@@ -546,9 +580,9 @@ h2 {
         th {
           visibility: hidden;
         }
-        td{
+        td {
           vertical-align: text-top;
-          padding-top: $xxs;
+          padding: $xxs $m $xxs $m;
         }
         tr:nth-of-type(8) {
           td {

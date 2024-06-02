@@ -1,6 +1,17 @@
-import React from "react";
-
+import React, { useEffect, useState } from "react";
+import { createClient } from "@supabase/supabase-js";
+const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
+const supabaseKey = import.meta.env.VITE_SUPABASE_KEY;
+const supabase = createClient(supabaseUrl, supabaseKey);
 export const About = () => {
+  const getImages = async () => {
+    let { data: data, error } = await supabase.from("images").select("*");
+    setImages(data);
+  };
+  const [images, setImages] = useState([]);
+  useEffect(() => {
+    getImages();
+  }, []);
   return (
     <section className="about">
       <article>
@@ -67,7 +78,13 @@ export const About = () => {
         </p>
       </article>
       <article>
-        image
+        {images.map((image) => {
+          return (
+            <div>
+              <img src={image.url} loading="lazy" key={image.id} />
+            </div>
+          );
+        })}
       </article>
     </section>
   );

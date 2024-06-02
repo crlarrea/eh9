@@ -374,19 +374,51 @@ h2 {
 }
 .about article {
   display: inherit;
+  flex: 0 0 50%;
+}
+.about article:first-of-type {
   flex-flow: inherit;
   row-gap: 16px;
-  flex: 0 0 50%;
-  border: 2px dashed red;
 }
-.about h3 {
+.about article:first-of-type h3 {
+  margin-top: 48px;
   font-family: "Gopher Bold";
   font-size: 48px;
   max-width: 15ch;
   color: #9fa6e5;
 }
-.about p {
+.about article:first-of-type p {
   max-width: 55ch;
+}
+.about article:last-of-type {
+  flex: 0 0 50%;
+  flex-flow: row wrap;
+  align-content: center;
+  justify-content: center;
+  row-gap: 7px;
+  column-gap: 7px;
+}
+.about article:last-of-type div {
+  flex: 0 0 25%;
+  height: 200px;
+  border-radius: 7px;
+  overflow: hidden;
+  transition: all 0.3s;
+}
+.about article:last-of-type div:nth-of-type(3n-1) {
+  filter: grayscale(1);
+}
+.about article:last-of-type div:nth-of-type(2n) {
+  flex: 0 0 60%;
+}
+.about article:last-of-type div:nth-of-type(3n+1) {
+  filter: hue-rotate(90deg);
+}
+.about article:last-of-type div:last-of-type {
+  flex: 0 0 100%;
+}
+.about article:last-of-type div:last-of-type img {
+  width: 100%;
 }
 
 .blog-article {
@@ -448,7 +480,7 @@ h2 {
 .menu {
   display: flex;
   width: 850px;
-  height: 550px;
+  min-height: 650px;
   margin-top: 60px;
   margin-bottom: 60px;
   border: 2px solid rgba(243, 191, 182, 0.3);
@@ -489,7 +521,7 @@ h2 {
 }
 .menu article:nth-of-type(2) div {
   position: absolute;
-  bottom: -10%;
+  bottom: -7%;
   right: 10%;
 }
 .menu article:last-of-type {
@@ -513,7 +545,7 @@ h2 {
 }
 .menu article:last-of-type table td {
   vertical-align: text-top;
-  padding-top: 7px;
+  padding: 7px 16px 7px 16px;
 }
 .menu article:last-of-type table tr:nth-of-type(8) td {
   padding-top: 48px;
