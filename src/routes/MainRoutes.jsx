@@ -8,6 +8,7 @@ import { Hero } from "../components/Hero";
 import { About } from "../components/About";
 import { SpotifyPlayer } from "../components/SpotifyPlayer";
 import { Menu } from "../components/Menu";
+import PageHead from "../components/PageHead";
 
 export const MainRoutes = () => (
   <>
@@ -22,8 +23,9 @@ export const MainRoutes = () => (
             path="/"
             element={
               <>
+                <PageHead title="EH9" />
                 <Hero />
-                <Menu/>
+                <Menu />
                 <Blog />
               </>
             }
