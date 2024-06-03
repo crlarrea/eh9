@@ -393,7 +393,7 @@ h2 {
 .about article:last-of-type {
   flex: 0 0 50%;
   flex-flow: row wrap;
-  align-content: flex-end;
+  align-content: center;
   justify-content: center;
   row-gap: 7px;
   column-gap: 7px;
