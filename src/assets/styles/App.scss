@@ -396,7 +396,7 @@ h2 {
         color: $purple500;
       }
       p {
-        max-width: 55ch;
+        max-width: 50ch;
       }
     }
     &:last-of-type {
@@ -520,6 +520,7 @@ h2 {
     font: {
       size: $h;
     }
+    padding-bottom:$xl;
   }
   article {
     &:first-of-type {

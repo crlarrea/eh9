@@ -4,7 +4,7 @@ import { FiArrowRight } from "react-icons/fi";
 import { Player, Controls } from "@lottiefiles/react-lottie-player";
 import heroAnimation from "../assets/img/hero_animation.json";
 
-import heroImg from "../assets/img/hero_image.webp";
+import heroImg from "../assets/img/hero.webp";
 export const Hero = () => {
   return (
     <section className="hero">

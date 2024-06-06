@@ -392,7 +392,7 @@ h2 {
   color: #9fa6e5;
 }
 .about article:first-of-type p {
-  max-width: 55ch;
+  max-width: 50ch;
 }
 .about article:last-of-type {
   flex: 0 0 50%;
@@ -492,6 +492,7 @@ h2 {
 }
 .menu h2 {
   font-size: 48px;
+  padding-bottom: 20px;
 }
 .menu article:first-of-type {
   background: #f3bfb6 url("../img/background_mask.svg");
