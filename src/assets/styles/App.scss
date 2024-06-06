@@ -398,7 +398,7 @@ h2 {
     &:last-of-type {
       flex: 0 0 50%;
       flex-flow: row wrap;
-      align-content: center;
+      align-content: flex-end;
       justify-content: center;
       row-gap: $xxs;
       column-gap: $xxs;
@@ -519,6 +519,10 @@ h2 {
   }
   article {
     &:first-of-type {
+      background: $pink500 url("../img/background_mask.svg");
+
+      background-position: 0 250px;
+      position: relative;
       padding: $h;
       flex: 1 0 40%;
       display: inherit;
@@ -532,13 +536,13 @@ h2 {
         column-gap: $xxs;
         text-transform: capitalize;
         align-self: flex-start;
-        border: none;
         margin-top: 0;
         padding: $xxs $m;
         border-radius: $xxs;
-        width: 150px;
+        // width: 180px;
+        background-color: transparent;
         font: {
-          size: $m;
+          size: $xxxl;
         }
 
         svg {
@@ -547,6 +551,23 @@ h2 {
           }
         }
         cursor: pointer;
+      }
+      picture {
+        // position: relative;
+
+        height: 250px;
+        // display: flex;
+        overflow: visible;
+        overflow: hidden;
+        img {
+          position: absolute;
+          width: 300px;
+          bottom: $m;
+          left: 25%;
+          z-index: 1;
+
+          filter: drop-shadow(5px -5px 5px rgba(black, 0.3));
+        }
       }
     }
     &:nth-of-type(2) {
@@ -562,7 +583,7 @@ h2 {
     &:last-of-type {
       padding: $h;
       flex: 1 0 60%;
-      background-color: rgba($pink500, 0.5);
+      // background-color: rgba($pink500, 0.5);
       h3 {
         font: {
           size: $xxl;
@@ -604,19 +625,20 @@ h2 {
 }
 .active {
   transition: all 0.3s;
-  background-color: $pink900;
+  border: 2px solid transparent;
   svg {
-    color: $pink100;
+    // color: $pink100;
+    // color: $brown900;
   }
-  box-shadow: 0 0 $xl $xxs rgba($pink900, 0.3);
-  color: $pink100;
+  // box-shadow: 0 0 $xl $xxs rgba($pink900, 0.3);
+  // color: $pink100;
   font: {
     family: "Roboto Bold";
   }
 }
 .inactive {
   color: $brown900;
-  background-color: $pink100;
+  border: 2px solid transparent;
   font: {
     family: "Roboto Thin";
   }

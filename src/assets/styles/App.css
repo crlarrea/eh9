@@ -393,7 +393,7 @@ h2 {
 .about article:last-of-type {
   flex: 0 0 50%;
   flex-flow: row wrap;
-  align-content: center;
+  align-content: flex-end;
   justify-content: center;
   row-gap: 7px;
   column-gap: 7px;
@@ -490,6 +490,9 @@ h2 {
   font-size: 48px;
 }
 .menu article:first-of-type {
+  background: #f3bfb6 url("../img/background_mask.svg");
+  background-position: 0 250px;
+  position: relative;
   padding: 48px;
   flex: 1 0 40%;
   display: inherit;
@@ -504,16 +507,28 @@ h2 {
   column-gap: 7px;
   text-transform: capitalize;
   align-self: flex-start;
-  border: none;
   margin-top: 0;
   padding: 7px 16px;
   border-radius: 7px;
-  width: 150px;
-  font-size: 16px;
+  background-color: transparent;
+  font-size: 36px;
   cursor: pointer;
 }
 .menu article:first-of-type button svg {
   font-size: 30px;
+}
+.menu article:first-of-type picture {
+  height: 250px;
+  overflow: visible;
+  overflow: hidden;
+}
+.menu article:first-of-type picture img {
+  position: absolute;
+  width: 300px;
+  bottom: 16px;
+  left: 25%;
+  z-index: 1;
+  filter: drop-shadow(5px -5px 5px rgba(0, 0, 0, 0.3));
 }
 .menu article:nth-of-type(2) {
   flex: 1 1 40%;
@@ -527,7 +542,6 @@ h2 {
 .menu article:last-of-type {
   padding: 48px;
   flex: 1 0 60%;
-  background-color: rgba(243, 191, 182, 0.5);
 }
 .menu article:last-of-type h3 {
   font-size: 30px;
@@ -557,18 +571,12 @@ h2 {
 
 .active {
   transition: all 0.3s;
-  background-color: #ff8cc3;
-  box-shadow: 0 0 20px 7px rgba(255, 140, 195, 0.3);
-  color: #fffafe;
+  border: 2px solid transparent;
   font-family: "Roboto Bold";
 }
-.active svg {
-  color: #fffafe;
-}
-
 .inactive {
   color: #644028;
-  background-color: #fffafe;
+  border: 2px solid transparent;
   font-family: "Roboto Thin";
 }
 .inactive svg {

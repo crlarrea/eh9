@@ -8,6 +8,7 @@ import menuAnimation from "../assets/img/menu_animation.json";
 import { GiCoffeePot } from "react-icons/gi";
 import { GiTeapotLeaves } from "react-icons/gi";
 import { GiSandwich } from "react-icons/gi";
+import coffee from "../assets/img/coffee.webp";
 
 export const Menu = () => {
   const types = ["coffee", "tea", "food"];
@@ -45,20 +46,23 @@ export const Menu = () => {
                 updateMenuView(button);
               }}
             >
-              {button === "coffee" ? (
+              {/* {button === "coffee" ? (
                 <GiCoffeePot />
               ) : button === "tea" ? (
                 <GiTeapotLeaves />
               ) : (
                 <GiSandwich />
-              )}
+              )} */}
               {button}
             </button>
           );
         })}
+        <picture>
+          <img src={coffee} alt="" />
+        </picture>
       </article>
       <article>
-        <Player
+        {/* <Player
           autoplay
           loop
           src={menuAnimation}
@@ -69,7 +73,7 @@ export const Menu = () => {
             visible={false}
             buttons={["play", "repeat", "frame", "debug"]}
           />
-        </Player>
+        </Player> */}
       </article>
       <article>
         <h3>{menuView.length !== 0 && menuView[0].type}</h3>
