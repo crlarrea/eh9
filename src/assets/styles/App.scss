@@ -521,13 +521,15 @@ h2 {
     &:first-of-type {
       background: $pink500 url("../img/background_mask.svg");
 
-      background-position: 0 250px;
+      // background-position: 0 250px;
+      animation: sliding-background 20s ease-in infinite forwards;
+
       position: relative;
       padding: $h;
       flex: 1 0 40%;
       display: inherit;
       flex-flow: column nowrap;
-      row-gap: $l;
+
       z-index: 1;
       button {
         transition: all 0.5s;
@@ -565,7 +567,6 @@ h2 {
           bottom: $m;
           left: 25%;
           z-index: 1;
-
           filter: drop-shadow(5px -5px 5px rgba(black, 0.3));
         }
       }
@@ -631,7 +632,7 @@ h2 {
     // color: $brown900;
   }
   // box-shadow: 0 0 $xl $xxs rgba($pink900, 0.3);
-  // color: $pink100;
+
   font: {
     family: "Roboto Bold";
   }
@@ -644,5 +645,14 @@ h2 {
   }
   svg {
     color: $brown900;
+  }
+}
+
+@keyframes sliding-background {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 0 -500px;
   }
 }

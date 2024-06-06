@@ -81,7 +81,7 @@ body {
   row-gap: 14px;
   padding: 48px 14px;
   scroll-snap-align: start;
-  border: 2px solid rgba(66, 82, 219, 0.2);
+  border: 2px solid rgba(111, 116, 159, 0.2);
   border-radius: 7px;
   flex: 0 0 clamp(220px, 250px, 80%);
   height: 280px;
@@ -93,7 +93,7 @@ body {
   box-shadow: 0 0 14px 7px rgba(46, 91, 255, 0.1019607843);
 }
 .blog article h3 {
-  color: #4252db;
+  color: #6f749f;
   font-family: "Roboto Bold";
 }
 .blog article p {
@@ -147,7 +147,7 @@ nav {
   position: relative;
 }
 nav a {
-  color: #4252db;
+  color: #6f749f;
   text-decoration: none;
   text-transform: capitalize;
   font-family: "Roboto Black";
@@ -232,7 +232,7 @@ footer {
   left: 30px;
 }
 .hero article:last-of-type div:last-of-type {
-  background-color: rgba(66, 82, 219, 0.3);
+  background-color: rgba(111, 116, 159, 0.3);
   background-color: rgba(243, 191, 182, 0.4);
   outline: 4px dotted rgba(159, 166, 229, 0.3);
   outline-offset: 48px;
@@ -256,7 +256,7 @@ footer {
   justify-content: flex-end;
   flex: 0 0 33%;
   cursor: pointer;
-  color: #4252db;
+  color: #6f749f;
   font-size: 30px;
 }
 
@@ -433,7 +433,7 @@ h2 {
 }
 .blog-article h3 {
   color: black;
-  border-bottom: 3px solid #4252db;
+  border-bottom: 3px solid #6f749f;
   padding-bottom: 14px;
   font-size: 60px;
   font-family: "Roboto Black";
@@ -457,7 +457,7 @@ h2 {
 }
 .blog-article span:last-of-type {
   display: inline-block;
-  color: #4252db;
+  color: #6f749f;
   border-left: 5px solid #9fa6e5;
   padding-left: 7px;
 }
@@ -491,13 +491,12 @@ h2 {
 }
 .menu article:first-of-type {
   background: #f3bfb6 url("../img/background_mask.svg");
-  background-position: 0 250px;
+  animation: sliding-background 20s ease-in infinite forwards;
   position: relative;
   padding: 48px;
   flex: 1 0 40%;
   display: inherit;
   flex-flow: column nowrap;
-  row-gap: 18px;
   z-index: 1;
 }
 .menu article:first-of-type button {
@@ -581,6 +580,15 @@ h2 {
 }
 .inactive svg {
   color: #644028;
+}
+
+@keyframes sliding-background {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 0 -500px;
+  }
 }
 
 /*# sourceMappingURL=App.css.map */

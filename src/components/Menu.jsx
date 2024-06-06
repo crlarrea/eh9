@@ -3,11 +3,9 @@ import { createClient } from "@supabase/supabase-js";
 const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
 const supabaseKey = import.meta.env.VITE_SUPABASE_KEY;
 const supabase = createClient(supabaseUrl, supabaseKey);
-import { Player, Controls } from "@lottiefiles/react-lottie-player";
-import menuAnimation from "../assets/img/menu_animation.json";
-import { GiCoffeePot } from "react-icons/gi";
-import { GiTeapotLeaves } from "react-icons/gi";
-import { GiSandwich } from "react-icons/gi";
+// import { Player, Controls } from "@lottiefiles/react-lottie-player";
+// import menuAnimation from "../assets/img/menu_animation.json";
+
 import coffee from "../assets/img/coffee.webp";
 
 export const Menu = () => {
@@ -46,13 +44,6 @@ export const Menu = () => {
                 updateMenuView(button);
               }}
             >
-              {/* {button === "coffee" ? (
-                <GiCoffeePot />
-              ) : button === "tea" ? (
-                <GiTeapotLeaves />
-              ) : (
-                <GiSandwich />
-              )} */}
               {button}
             </button>
           );
