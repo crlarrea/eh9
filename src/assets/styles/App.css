@@ -355,11 +355,15 @@ footer article:last-of-type img {
   align-items: center;
   margin-top: 30px;
   column-gap: 7px;
-  background-color: #9fa6e5;
+  background-color: #6f749f;
   padding: 14px 30px;
   align-self: flex-start;
   color: #fffafe;
   border-radius: 14px;
+  transition: all 0.3s;
+}
+.btn:hover {
+  background-color: #9fa6e5;
 }
 
 h2 {
@@ -500,7 +504,6 @@ h2 {
   z-index: 1;
 }
 .menu article:first-of-type button {
-  transition: all 0.5s;
   display: inline-flex;
   align-items: center;
   column-gap: 7px;
@@ -510,7 +513,7 @@ h2 {
   padding: 7px 16px;
   border-radius: 7px;
   background-color: transparent;
-  font-size: 36px;
+  font-size: 30px;
   cursor: pointer;
 }
 .menu article:first-of-type button svg {
@@ -555,10 +558,18 @@ h2 {
 }
 .menu article:last-of-type table th {
   visibility: hidden;
+  cursor: pointer;
 }
 .menu article:last-of-type table td {
   vertical-align: text-top;
   padding: 7px 16px 7px 16px;
+}
+.menu article:last-of-type table tr {
+  cursor: pointer;
+}
+.menu article:last-of-type table tr:hover {
+  transition: all 0.1s;
+  color: #9fa6e5;
 }
 .menu article:last-of-type table tr:nth-of-type(8) td {
   padding-top: 48px;
@@ -569,7 +580,6 @@ h2 {
 }
 
 .active {
-  transition: all 0.3s;
   border: 2px solid transparent;
   font-family: "Roboto Bold";
 }
