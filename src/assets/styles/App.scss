@@ -524,6 +524,7 @@ h2 {
   article {
     &:first-of-type {
       background: $pink500 url("../img/background_mask.svg");
+      border-radius: $xs 0 0 $xs;
 
       // background-position: 0 250px;
       animation: sliding-background 20s ease-in infinite forwards;
@@ -607,17 +608,15 @@ h2 {
         th {
           visibility: hidden;
           cursor: pointer;
-          
         }
         td {
           vertical-align: text-top;
           padding: $xxs $m $xxs $m;
-          
         }
-        tr{
-          &:hover{
+        tr {
+          &:hover {
             transition: all 0.1s;
-            color:$purple500;
+            color: $purple500;
           }
           cursor: pointer;
         }

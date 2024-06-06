@@ -495,6 +495,7 @@ h2 {
 }
 .menu article:first-of-type {
   background: #f3bfb6 url("../img/background_mask.svg");
+  border-radius: 12px 0 0 12px;
   animation: sliding-background 20s ease-in infinite forwards;
   position: relative;
   padding: 48px;
