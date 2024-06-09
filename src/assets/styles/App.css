@@ -50,9 +50,13 @@ body {
   box-shadow: 0 16px 16px 14px rgba(46, 91, 255, 0.1019607843);
 }
 
-.blog {
+section {
+  min-width: 850px;
   margin-top: 60px;
   margin-bottom: 60px;
+}
+
+.blog {
   position: relative;
 }
 .blog h2 {
@@ -130,7 +134,6 @@ span[data-direction]:last-of-type {
 }
 
 .spotify-player {
-  margin-top: 60px;
   display: flex;
   justify-content: center;
   padding: 48px;
@@ -149,7 +152,6 @@ span[data-direction]:last-of-type {
   top: -59px;
 }
 
-.hero,
 nav {
   padding: 48px;
 }
@@ -166,6 +168,9 @@ nav a {
   text-transform: capitalize;
   font-family: "Roboto Black";
   font-size: 18px;
+}
+nav a:hover {
+  filter: saturate(2.1);
 }
 
 .copyright {
@@ -207,18 +212,18 @@ footer {
 .hero {
   display: flex;
   flex-flow: row nowrap;
-  width: 100%;
+  border: 2px solid rgba(159, 166, 229, 0.3);
+  border-radius: 7px;
 }
 .hero h2 {
   font-size: 48px;
 }
-.hero article {
-  display: inherit;
-}
 .hero article:first-of-type {
+  padding: 48px;
   flex: 1 1 40%;
   flex-flow: column nowrap;
   row-gap: 16px;
+  display: inherit;
 }
 .hero article:first-of-type p {
   max-width: 35ch;
@@ -234,35 +239,22 @@ footer {
   font-size: 20px;
 }
 .hero article:last-of-type {
-  flex: 1 1 60%;
-  display: flex;
-  justify-content: center;
+  flex: 1 1 40%;
   position: relative;
+  background: linear-gradient(90deg, hsl(312, 100%, 99%) 0%, #9fa6e5 100%);
+}
+.hero article:last-of-type div {
+  position: absolute;
 }
 .hero article:last-of-type div:first-of-type {
-  position: absolute;
-  z-index: 1;
-  bottom: 50px;
-  left: 30px;
+  right: 5%;
 }
 .hero article:last-of-type div:last-of-type {
-  background-color: rgba(159, 166, 229, 0.3);
-  background-color: rgba(243, 191, 182, 0.4);
-  outline: 4px dotted rgba(159, 166, 229, 0.3);
-  outline-offset: 48px;
-  padding: 60px;
-  border-radius: 50%;
-  height: 350px;
-  aspect-ratio: 1;
-  position: relative;
+  right: 0;
 }
 .hero article:last-of-type div:last-of-type img {
-  position: absolute;
-  top: -5%;
-  left: -5%;
   width: 350px;
-  filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.4));
-  z-index: 2;
+  filter: drop-shadow(-7px 5px 7px rgba(0, 0, 0, 0.3));
 }
 
 .shopping-trolley {
@@ -377,7 +369,7 @@ footer article:last-of-type img {
   transition: all 0.3s;
 }
 .btn:hover {
-  background-color: #9fa6e5;
+  filter: saturate(2.1);
 }
 
 h2 {
@@ -511,7 +503,7 @@ h2 {
 .menu article:first-of-type {
   background: #f3bfb6 url("../img/background_mask.svg");
   border-radius: 12px 0 0 12px;
-  animation: sliding-background 20s ease-in infinite forwards;
+  animation: sliding-background 30s ease-in infinite forwards;
   position: relative;
   padding: 48px;
   flex: 1 0 40%;

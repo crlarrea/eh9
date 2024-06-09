@@ -20,6 +20,7 @@ export const Article = () => {
 
   useEffect(() => {
     getArticle();
+    scrollTo(0, 0);
   }, []);
 
   return (

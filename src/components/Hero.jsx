@@ -30,6 +30,7 @@ export const Hero = () => {
           autoplay
           loop
           src={heroAnimation}
+          speed={0.7}
           style={{ height: "300px", width: "300px" }}
         >
           <Controls
