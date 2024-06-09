@@ -1,96 +1,74 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useReducer } from "react";
 import { createClient } from "@supabase/supabase-js";
 const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
 const supabaseKey = import.meta.env.VITE_SUPABASE_KEY;
 const supabase = createClient(supabaseUrl, supabaseKey);
-// import { Player, Controls } from "@lottiefiles/react-lottie-player";
-// import menuAnimation from "../assets/img/menu_animation.json";
+import { MenuReducer } from "../Reducers/Reducers";
 
 import coffee from "../assets/img/coffee.webp";
+import { Order } from "./Order";
 
 export const Menu = () => {
-  const types = ["coffee", "tea", "food"];
-  const [menu, setMenu] = useState([]);
-  const [menuView, setMenuView] = useState([]);
-  const [active, setActive] = useState(types[0]);
-  const updateBasket = (itemId) => {
-    let basket = JSON.parse(localStorage.getItem("basket")) || [];
-    basket.push(itemId);
-    localStorage.setItem("basket", JSON.stringify(basket));
-    console.log("your basket", basket);
-  };
+  const [menuState, dispatch] = useReducer(MenuReducer, {
+    menu: [],
+    filteredView: [],
+  });
 
   const getMenu = async () => {
     let { data: data, error } = await supabase.from("menu").select("*");
-    setMenu(data);
-    setMenuView(data.filter((el) => el.type === "coffee"));
+    const action = { type: "setMenu", payload: data };
+    dispatch(action);
+    updateView(data);
+    updateTypes(data);
   };
 
-  const updateMenuView = (condition) => {
-    let filteredResults = menu.filter((el) => el.type === condition);
-    setMenuView(filteredResults);
-    setActive(condition);
+  const updateView = (data, condition = "coffee") => {
+    let filteredData = data.filter((entry) => {
+      return entry.type === condition;
+    });
+
+    const action = {
+      type: "setCurrentView",
+      payload: filteredData,
+    };
+    dispatch(action);
+  };
+
+  const updateTypes = (data) => {
+    let types = new Set(data.map((entry) => entry.type));
+    const action = {
+      type: "setTypes",
+      payload: types,
+    };
+    dispatch(action);
   };
 
   useEffect(() => {
     getMenu();
-    updateMenuView("coffee");
   }, []);
 
   return (
     <section className="menu" id="menu">
       <article>
-        <h2>Our Menu</h2>
-        {types.map((button) => {
+        <h2>our menu </h2>
+        {menuState?.types?.map((entry) => {
           return (
             <button
-              key={button}
-              className={active === button ? "active" : "inactive"}
-              onClick={(ev) => {
-                updateMenuView(button);
+              onClick={() => {
+                updateView(menuState.menu, entry);
               }}
             >
-              {button}
+              {entry}
             </button>
           );
         })}
-        <picture>
-          <img src={coffee} alt="" />
-        </picture>
+        <h3>{menuState.choices}</h3>
+        {menuState?.filteredView?.map((entry) => {
+          return <p key={entry.id}>{entry.item_name}</p>;
+        })}
       </article>
       <article>
-        <h3>{menuView.length !== 0 && menuView[0].type}</h3>
-
-        <table>
-          <tbody>
-            <tr>
-              <th>product</th>
-              <th>price</th>
-            </tr>
-            {menuView.map((item) => {
-              return (
-                <tr
-                  key={item.item_name}
-                  onClick={() => {
-                    // console.log(item.id);
-                    updateBasket(item.id);
-                  }}
-                >
-                  <td>{item.item_name}</td>
-                  <td key={`ingredients-${item.item_name}`}>
-                    {item.ingredients !== null && item.ingredients.join(", ")}
-                  </td>
-                  <td>
-                    {new Intl.NumberFormat("en-GB", {
-                      style: "currency",
-                      currency: "GBP",
-                    }).format(item.price_per_unit)}
-                  </td>
-                </tr>
-              );
-            })}
-          </tbody>
-        </table>
+        <h2>your order</h2>
       </article>
     </section>
   );

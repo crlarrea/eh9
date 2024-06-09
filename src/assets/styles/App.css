@@ -250,11 +250,11 @@ footer {
   right: 5%;
 }
 .hero article:last-of-type div:last-of-type {
-  right: 0;
+  right: 48px;
 }
 .hero article:last-of-type div:last-of-type img {
   width: 350px;
-  filter: drop-shadow(-7px 5px 7px rgba(0, 0, 0, 0.3));
+  filter: drop-shadow(-7px 14px 7px rgba(0, 0, 0, 0.3));
 }
 
 .shopping-trolley {
@@ -489,103 +489,14 @@ h2 {
 
 .menu {
   display: flex;
+  flex-flow: row nowrap;
   width: 850px;
-  min-height: 650px;
-  margin-top: 60px;
-  margin-bottom: 60px;
-  border: 2px solid rgba(243, 191, 182, 0.3);
-  border-radius: 12px;
-}
-.menu h2 {
-  font-size: 48px;
-  padding-bottom: 20px;
+  border: 2px solid #f3bfb6;
+  border-radius: 7px;
 }
 .menu article:first-of-type {
-  background: #f3bfb6 url("../img/background_mask.svg");
-  border-radius: 12px 0 0 12px;
-  animation: sliding-background 30s ease-in infinite forwards;
-  position: relative;
   padding: 48px;
-  flex: 1 0 40%;
-  display: inherit;
-  flex-flow: column nowrap;
-  z-index: 1;
-}
-.menu article:first-of-type button {
-  display: inline-flex;
-  align-items: center;
-  column-gap: 7px;
-  text-transform: capitalize;
-  align-self: flex-start;
-  margin-top: 0;
-  padding: 7px 16px;
-  border-radius: 7px;
-  background-color: transparent;
-  border: none;
-  font-size: 30px;
-  cursor: pointer;
-}
-.menu article:first-of-type button svg {
-  font-size: 30px;
-}
-.menu article:first-of-type picture {
-  height: 250px;
-  overflow: visible;
-  overflow: hidden;
-}
-.menu article:first-of-type picture img {
-  position: absolute;
-  width: 300px;
-  bottom: 16px;
-  left: 25%;
-  z-index: 1;
-  filter: drop-shadow(5px -5px 5px rgba(0, 0, 0, 0.3));
-}
-.menu article:nth-of-type(2) {
-  flex: 1 1 40%;
-  position: relative;
-}
-.menu article:nth-of-type(2) div {
-  position: absolute;
-  bottom: -7%;
-  right: 10%;
-}
-.menu article:last-of-type {
-  padding: 48px;
-  flex: 1 0 60%;
-}
-.menu article:last-of-type h3 {
-  font-size: 30px;
-  font-family: "Gopher Bold";
-  color: #644028;
-  border-bottom: 2px solid #644028;
-}
-.menu article:last-of-type table {
-  width: 100%;
-  font-family: "Gopher Bold";
-  text-transform: uppercase;
-}
-.menu article:last-of-type table th {
-  visibility: hidden;
-  cursor: pointer;
-}
-.menu article:last-of-type table td {
-  vertical-align: text-top;
-  padding: 7px 16px 7px 16px;
-}
-.menu article:last-of-type table tr {
-  cursor: pointer;
-}
-.menu article:last-of-type table tr:hover {
-  transition: all 0.1s;
-  color: #9fa6e5;
-}
-.menu article:last-of-type table tr:nth-of-type(8) td {
-  padding-top: 48px;
-}
-.menu article:last-of-type table td:nth-of-type(2) {
-  font-family: "Roboto Thin";
-  text-transform: lowercase;
+  background-color: #f3bfb6;
 }
 
 .active {

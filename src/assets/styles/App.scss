@@ -235,11 +235,12 @@ footer {
           }
         }
         &:last-of-type {
-          right: 0;
+          right: $h;
+
 
           img {
             width: 350px;
-            filter: drop-shadow(0 -$xxs 5px $xxs rgba(black, 0.3));
+            filter: drop-shadow( 0 -$xxs $s $xxs rgba(black, 0.3));
           }
         }
       }
@@ -520,136 +521,23 @@ h2 {
   }
 }
 
-.menu {
+.menu{
   display: flex;
+  flex-flow: row nowrap;
   width: 850px;
-  min-height: 650px;
-  margin: {
-    top: $xh;
-    bottom: $xh;
-  }
-  border: 2px solid rgba($pink500, 0.3);
-  border-radius: $xs;
+  border: 2px solid $pink500;
+  border-radius: $xxs;
+  
 
-  h2 {
-    font: {
-      size: $h;
+  article{
+    &:first-of-type{
+      padding:$h;
+      background-color: $pink500;
     }
-    padding-bottom: $xl;
-  }
-  article {
-    &:first-of-type {
-      background: $pink500 url("../img/background_mask.svg");
-      border-radius: $xs 0 0 $xs;
-      animation: sliding-background 30s ease-in infinite forwards;
 
-      position: relative;
-      padding: $h;
-      flex: 1 0 40%;
-      display: inherit;
-      flex-flow: column nowrap;
-
-      z-index: 1;
-      button {
-        display: inline-flex;
-        align-items: center;
-        column-gap: $xxs;
-        text-transform: capitalize;
-        align-self: flex-start;
-        margin-top: 0;
-        padding: $xxs $m;
-        border-radius: $xxs;
-        background-color: transparent;
-        border: none;
-        font: {
-          size: $xxl;
-        }
-
-        svg {
-          font: {
-            size: $xxl;
-          }
-        }
-        cursor: pointer;
-      }
-      picture {
-        // position: relative;
-
-        height: 250px;
-        // display: flex;
-        overflow: visible;
-        overflow: hidden;
-        img {
-          position: absolute;
-          width: 300px;
-          bottom: $m;
-          left: 25%;
-          z-index: 1;
-          filter: drop-shadow(5px -5px 5px rgba(black, 0.3));
-        }
-      }
-    }
-    &:nth-of-type(2) {
-      flex: 1 1 40%;
-      position: relative;
-
-      div {
-        position: absolute;
-        bottom: -7%;
-        right: 10%;
-      }
-    }
-    &:last-of-type {
-      padding: $h;
-      flex: 1 0 60%;
-      // background-color: rgba($pink500, 0.5);
-      h3 {
-        font: {
-          size: $xxl;
-          family: "Gopher Bold";
-        }
-        color: $brown900;
-        border-bottom: 2px solid $brown900;
-      }
-      table {
-        width: 100%;
-        font: {
-          family: "Gopher Bold";
-        }
-        text: {
-          transform: uppercase;
-        }
-        th {
-          visibility: hidden;
-          cursor: pointer;
-        }
-        td {
-          vertical-align: text-top;
-          padding: $xxs $m $xxs $m;
-        }
-        tr {
-          &:hover {
-            transition: all 0.1s;
-            color: $purple500;
-          }
-          cursor: pointer;
-        }
-        tr:nth-of-type(8) {
-          td {
-            padding-top: $h;
-          }
-        }
-        td:nth-of-type(2) {
-          // background-color: red;
-          font: {
-            family: "Roboto Thin";
-          }
-          text-transform: lowercase;
-        }
-      }
-    }
   }
 }
+
 .active {
   color: $brown900;
   font: {
