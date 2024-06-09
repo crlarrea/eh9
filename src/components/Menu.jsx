@@ -13,6 +13,12 @@ export const Menu = () => {
   const [menu, setMenu] = useState([]);
   const [menuView, setMenuView] = useState([]);
   const [active, setActive] = useState(types[0]);
+  const updateBasket = (itemId) => {
+    let basket = JSON.parse(localStorage.getItem("basket")) || [];
+    basket.push(itemId);
+    localStorage.setItem("basket", JSON.stringify(basket));
+    console.log("your basket", basket);
+  };
 
   const getMenu = async () => {
     let { data: data, error } = await supabase.from("menu").select("*");
@@ -53,20 +59,6 @@ export const Menu = () => {
         </picture>
       </article>
       <article>
-        {/* <Player
-          autoplay
-          loop
-          src={menuAnimation}
-          style={{ height: "250px", width: "250px" }}
-          speed={2}
-        >
-          <Controls
-            visible={false}
-            buttons={["play", "repeat", "frame", "debug"]}
-          />
-        </Player> */}
-      </article>
-      <article>
         <h3>{menuView.length !== 0 && menuView[0].type}</h3>
 
         <table>
@@ -77,7 +69,13 @@ export const Menu = () => {
             </tr>
             {menuView.map((item) => {
               return (
-                <tr key={item.item_name}>
+                <tr
+                  key={item.item_name}
+                  onClick={() => {
+                    // console.log(item.id);
+                    updateBasket(item.id);
+                  }}
+                >
                   <td>{item.item_name}</td>
                   <td key={`ingredients-${item.item_name}`}>
                     {item.ingredients !== null && item.ingredients.join(", ")}
