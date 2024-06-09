@@ -6,7 +6,6 @@ const supabase = createClient(supabaseUrl, supabaseKey);
 import { MenuReducer } from "../Reducers/Reducers";
 
 import coffee from "../assets/img/coffee.webp";
-import { Order } from "./Order";
 
 export const Menu = () => {
   const [menuState, dispatch] = useReducer(MenuReducer, {
@@ -57,6 +56,7 @@ export const Menu = () => {
     dispatch(action);
     console.log(item);
   };
+
   useEffect(() => {
     getMenu();
   }, []);
@@ -121,6 +121,7 @@ export const Menu = () => {
         </span>
       </article>
       <article>
+        <img src={coffee} />
         <h2>your order</h2>
         <table>
           <tbody>
@@ -132,16 +133,9 @@ export const Menu = () => {
 
             {menuState.basket.map((entry) => {
               return (
-                <tr
-                  key={entry}
-                >
-                  <td>
-                    {entry.item_name}
-                    
-                  </td>
-                  <td>
-                    
-                  </td>
+                <tr key={entry}>
+                  <td>{entry.item_name}</td>
+                  <td></td>
                 </tr>
               );
             })}

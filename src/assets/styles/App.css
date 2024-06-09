@@ -495,10 +495,13 @@ h2 {
   border: 2px solid #f3bfb6;
   border-radius: 7px;
 }
-.menu article:first-of-type {
+.menu article {
   flex: 0 0 50%;
+}
+.menu article:first-of-type {
   padding: 48px;
-  background-color: rgba(243, 191, 182, 0.5);
+  background: url("../img/background_mask.svg") #f3bfb6;
+  animation: sliding-background 30s linear infinite;
 }
 .menu article:first-of-type h2 {
   margin-bottom: 20px;
@@ -526,6 +529,7 @@ h2 {
 .menu article:first-of-type table {
   width: 100%;
   margin-top: 16px;
+  color: #644028;
 }
 .menu article:first-of-type table th {
   visibility: hidden;
@@ -536,7 +540,7 @@ h2 {
 .menu article:first-of-type table tr:hover td:first-of-type {
   transition: all 0.3s;
   transform: translateX(14px);
-  color: #e9846b;
+  color: black;
 }
 .menu article:first-of-type table td {
   padding-bottom: 7px;
@@ -555,9 +559,26 @@ h2 {
 }
 .menu article:first-of-type table td:last-of-type {
   text-align: end;
+  font-family: "Roboto Regular";
 }
 .menu article:last-of-type {
+  position: relative;
   padding: 48px;
+}
+.menu article:last-of-type img {
+  width: 200px;
+  position: absolute;
+  bottom: 0;
+  left: calc(-1.5*48px);
+  filter: drop-shadow(-7px 14px 7px rgba(0, 0, 0, 0.3));
+}
+.menu article:last-of-type table {
+  background-color: rgba(0, 0, 0, 0.01);
+  padding: 18px;
+  width: 100%;
+}
+.menu article:last-of-type table th {
+  visibility: hidden;
 }
 
 .active {
