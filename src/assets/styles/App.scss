@@ -136,7 +136,7 @@ nav {
       family: "Roboto Black";
       size: $l;
     }
-    &:hover{
+    &:hover {
       filter: saturate(2.1);
     }
   }
@@ -237,10 +237,9 @@ footer {
         &:last-of-type {
           right: $h;
 
-
           img {
             width: 350px;
-            filter: drop-shadow( 0 -$xxs $s $xxs rgba(black, 0.3));
+            filter: drop-shadow(0 -$xxs $s $xxs rgba(black, 0.3));
           }
         }
       }
@@ -521,32 +520,115 @@ h2 {
   }
 }
 
-.menu{
+.menu {
   display: flex;
   flex-flow: row nowrap;
   width: 850px;
+  min-height: 550px;
   border: 2px solid $pink500;
   border-radius: $xxs;
-  
 
-  article{
-    &:first-of-type{
-      padding:$h;
-      background-color: $pink500;
+  article {
+    &:first-of-type {
+      flex: 0 0 50%;
+      padding: $h;
+      background-color: rgba($pink500,0.5);
+      h2 {
+        margin-bottom: $xl;
+        padding-bottom: $xs;
+
+        font: {
+          size: $xxl;
+        }
+      }
+      div {
+        display: flex;
+        flex-flow: row wrap;
+        width: 100%;
+        justify-content: space-between;
+        row-gap: $xxs;
+        border-bottom: 2px solid rgba($brown900, 0.6);
+        padding: 0;
+        margin: 0;
+
+        button {
+          cursor: pointer;
+          margin-bottom: -3px;
+          background-color: transparent;
+          padding: $xxs $s;
+          font: {
+            size: $l;
+          }
+          text: {
+            transform: capitalize;
+          }
+        }
+      }
+      table {
+        width: 100%;
+        margin-top: $m;
+
+        th {
+          visibility: hidden;
+        }
+        tr {
+          cursor: pointer;
+          &:hover {
+            
+            td:first-of-type {
+              transition: all 0.3s;
+              transform: translateX($s);
+              // color: rgba($brown900,0.7);
+              color: $orange900;
+            }
+          }
+        }
+        td {
+          padding-bottom: $xxs;
+          vertical-align: top;
+
+          &:first-of-type {
+            display: inline-flex;
+            flex-flow: column nowrap;
+            text-align: start;
+            font: {
+              family: "Gopher Bold";
+            }
+            text: {
+              transform: capitalize;
+            }
+            span {
+              font: {
+                family: "Roboto Thin";
+                size: $s;
+              }
+            }
+          }
+          &:last-of-type {
+            text-align: end;
+          }
+        }
+      }
     }
-
+    &:last-of-type{
+      padding:$h;
+    }
   }
 }
 
 .active {
-  color: $brown900;
+  border: none;
+  border-bottom: 4px solid transparent;
   font: {
-    family: "Roboto Bold";
+    family: "Roboto Black";
   }
+
+  border-color: $brown900;
 }
 .inactive {
+  border: none;
   color: $brown900;
-  border: 2px solid transparent;
+
   font: {
     family: "Roboto Thin";
   }
