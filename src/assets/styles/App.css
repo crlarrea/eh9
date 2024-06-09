@@ -46,16 +46,17 @@ body {
   color: black;
   border-radius: 48px;
   width: 1200px;
-  font-family: "Roboto Regular";
+  font-family: "Roboto Thin";
   box-shadow: 0 16px 16px 14px rgba(46, 91, 255, 0.1019607843);
 }
 
 .blog {
   margin-top: 60px;
+  margin-bottom: 60px;
+  position: relative;
 }
 .blog h2 {
-  align-self: center;
-  padding-left: 60px;
+  padding-bottom: 60px;
   font-size: 18px;
 }
 .blog div {
@@ -64,12 +65,10 @@ body {
   overflow-x: scroll;
   scroll-snap-type: x mandatory;
   gap: 16px;
-  padding-left: 60px;
-  padding-right: 60px;
-  padding-bottom: 60px;
-  padding-top: 48px;
+  border-radius: 7px;
   -ms-overflow-style: none;
   scrollbar-width: none;
+  box-shadow: inset 28px 0 10px -1px rgba(159, 166, 229, 0.1), inset -28px 0 10px -1px rgba(159, 166, 229, 0.1);
 }
 .blog div ::-webkit-scrollbar {
   display: none;
@@ -80,20 +79,18 @@ body {
   flex-flow: column nowrap;
   row-gap: 14px;
   padding: 48px 14px;
-  scroll-snap-align: start;
-  border: 2px solid rgba(111, 116, 159, 0.2);
+  scroll-snap-align: center;
+  border: 2px solid rgba(159, 166, 229, 0.2);
   border-radius: 7px;
   flex: 0 0 clamp(220px, 250px, 80%);
   height: 280px;
 }
 .blog article:hover {
   transition: all 0.3s;
-  transform: scale(1.1);
-  background-color: rgba(159, 166, 229, 0.2);
-  box-shadow: 0 0 14px 7px rgba(46, 91, 255, 0.1019607843);
+  background-color: rgba(159, 166, 229, 0.1);
 }
 .blog article h3 {
-  color: #6f749f;
+  color: #9fa6e5;
   font-family: "Roboto Bold";
 }
 .blog article p {
@@ -108,11 +105,28 @@ body {
   padding-left: 7px;
 }
 .blog article span {
+  font-size: 12px;
   align-self: flex-end;
   margin-top: auto;
-  font-size: 12px;
-  font-family: "Roboto Bold";
   color: #9fa6e5;
+}
+
+span[data-direction] {
+  position: absolute;
+  color: #9fa6e5;
+  cursor: pointer;
+  opacity: 0.5;
+  font-size: 30px;
+  top: 55%;
+}
+span[data-direction]:hover {
+  opacity: 1;
+}
+span[data-direction]:first-of-type {
+  left: -60px;
+}
+span[data-direction]:last-of-type {
+  right: -60px;
 }
 
 .spotify-player {
@@ -147,7 +161,7 @@ nav {
   position: relative;
 }
 nav a {
-  color: #6f749f;
+  color: #9fa6e5;
   text-decoration: none;
   text-transform: capitalize;
   font-family: "Roboto Black";
@@ -232,7 +246,7 @@ footer {
   left: 30px;
 }
 .hero article:last-of-type div:last-of-type {
-  background-color: rgba(111, 116, 159, 0.3);
+  background-color: rgba(159, 166, 229, 0.3);
   background-color: rgba(243, 191, 182, 0.4);
   outline: 4px dotted rgba(159, 166, 229, 0.3);
   outline-offset: 48px;
@@ -256,7 +270,7 @@ footer {
   justify-content: flex-end;
   flex: 0 0 33%;
   cursor: pointer;
-  color: #6f749f;
+  color: #9fa6e5;
   font-size: 30px;
 }
 
@@ -355,7 +369,7 @@ footer article:last-of-type img {
   align-items: center;
   margin-top: 30px;
   column-gap: 7px;
-  background-color: #6f749f;
+  background-color: #9fa6e5;
   padding: 14px 30px;
   align-self: flex-start;
   color: #fffafe;
@@ -437,7 +451,7 @@ h2 {
 }
 .blog-article h3 {
   color: black;
-  border-bottom: 3px solid #6f749f;
+  border-bottom: 3px solid #9fa6e5;
   padding-bottom: 14px;
   font-size: 60px;
   font-family: "Roboto Black";
@@ -461,7 +475,7 @@ h2 {
 }
 .blog-article span:last-of-type {
   display: inline-block;
-  color: #6f749f;
+  color: #9fa6e5;
   border-left: 5px solid #9fa6e5;
   padding-left: 7px;
 }
@@ -515,6 +529,7 @@ h2 {
   padding: 7px 16px;
   border-radius: 7px;
   background-color: transparent;
+  border: none;
   font-size: 30px;
   cursor: pointer;
 }
@@ -582,9 +597,10 @@ h2 {
 }
 
 .active {
-  border: 2px solid transparent;
+  color: #644028;
   font-family: "Roboto Bold";
 }
+
 .inactive {
   color: #644028;
   border: 2px solid transparent;

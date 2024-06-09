@@ -1,10 +1,14 @@
 @import "./UISystem.scss";
 
 .blog {
-  margin-top: $xh;
+  margin: {
+    top: $xh;
+    bottom: $xh;
+  }
+  position: relative;
   h2 {
-    align-self: center;
-    padding-left: $xh;
+    // align-self: center;
+    padding-bottom: $xh;
     font: {
       size: $l;
     }
@@ -15,17 +19,18 @@
     overflow-x: scroll;
     scroll-snap-type: x mandatory;
     gap: $m;
+    border-radius: $xxs;
     padding: {
-      left: $xh;
-      right: $xh;
-      bottom: $xh;
-      top: $h;
+      // bottom: $xh;
+      // top: $h;
     }
     ::-webkit-scrollbar {
       display: none;
     }
     -ms-overflow-style: none;
     scrollbar-width: none;
+    box-shadow: inset 28px 0 10px -1px rgba($purple500, 0.1),
+      inset -28px 0 10px -1px rgba($purple500, 0.1);
   }
 
   article {
@@ -34,21 +39,20 @@
     flex-flow: column nowrap;
     row-gap: $s;
     padding: $h $s;
-    scroll-snap-align: start;
-    border: 2px solid rgba($purple900, 0.2);
+    scroll-snap-align: center;
+    border: 2px solid rgba($purple500, 0.2);
     border-radius: $xxs;
     flex: 0 0 clamp(220px, 250px, 80%);
     height: clamp(220px, 280px, 350px);
 
     &:hover {
       transition: all 0.3s;
-      transform: scale(1.1);
-      background-color: rgba($purple500, 0.2);
-      box-shadow: 0 0 $s $xxs #2e5bff1a;
+      background-color: rgba($purple500, 0.1);
+      // box-shadow: 0 0 $s $xxs #2e5bff1a;
     }
 
     h3 {
-      color: $purple900;
+      color: $purple500;
       font-family: "Roboto Bold";
     }
     p {
@@ -66,17 +70,33 @@
         padding-left: $xxs;
       }
     }
-
     span {
-      align-self: flex-end;
-      margin-top: auto;
       font: {
         size: $xs;
-        family: "Roboto Bold";
       }
-
+      align-self: flex-end;
+      margin-top: auto;
       color: $purple500;
     }
+  }
+}
+span[data-direction] {
+  position: absolute;
+  color: $purple500;
+  cursor: pointer;
+  opacity: 0.5;
+  &:hover {
+    opacity: 1;
+  }
+  font: {
+    size: $xxl;
+  }
+  top: 55%;
+  &:first-of-type {
+    left: -$xh;
+  }
+  &:last-of-type {
+    right: -$xh;
   }
 }
 
@@ -111,7 +131,7 @@ nav {
   justify-content: space-between;
   position: relative;
   a {
-    color: $purple900;
+    color: $purple500;
     text: {
       decoration: none;
       transform: capitalize;
@@ -207,7 +227,7 @@ footer {
           left: 30px;
         }
         &:last-of-type {
-          background-color: rgba($purple900, 0.3);
+          background-color: rgba($purple500, 0.3);
           background-color: rgba($pink500, 0.4);
           outline: 4px dotted rgba($purple500, 0.3);
           outline-offset: $h;
@@ -236,7 +256,7 @@ footer {
   justify-content: flex-end;
   flex: 0 0 33%;
   cursor: pointer;
-  color: $purple900;
+  color: $purple500;
   font: {
     size: $xxl;
   }
@@ -355,7 +375,7 @@ footer {
   align-items: center;
   margin-top: $xxl;
   column-gap: $xxs;
-  background-color: $purple900;
+  background-color: $purple500;
   padding: $s $xxl;
   align-self: flex-start;
   color: $pink100;
@@ -441,14 +461,13 @@ h2 {
   column-count: 2;
   column-width: 14em;
   column-gap: $xh;
-
   max-width: 800px;
   border: 2px solid rgba($purple500, 0.2);
   border-radius: $s;
   padding: $xh $h;
   h3 {
     color: black;
-    border-bottom: 3px solid $purple900;
+    border-bottom: 3px solid $purple500;
     padding-bottom: $s;
     font: {
       size: $xh;
@@ -481,7 +500,7 @@ h2 {
     }
     &:last-of-type {
       display: inline-block;
-      color: $purple900;
+      color: $purple500;
       border-left: 5px solid $purple500;
       padding-left: $xxs;
     }
@@ -520,7 +539,7 @@ h2 {
     font: {
       size: $h;
     }
-    padding-bottom:$xl;
+    padding-bottom: $xl;
   }
   article {
     &:first-of-type {
@@ -546,8 +565,8 @@ h2 {
         margin-top: 0;
         padding: $xxs $m;
         border-radius: $xxs;
-        // width: 180px;
         background-color: transparent;
+        border: none;
         font: {
           size: $xxl;
         }
@@ -638,13 +657,7 @@ h2 {
   }
 }
 .active {
-  border: 2px solid transparent;
-  svg {
-    // color: $pink100;
-    // color: $brown900;
-  }
-  // box-shadow: 0 0 $xl $xxs rgba($pink900, 0.3);
-
+  color: $brown900;
   font: {
     family: "Roboto Bold";
   }
