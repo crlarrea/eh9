@@ -181,6 +181,7 @@ footer {
   display: flex;
   flex-flow: row nowrap;
   border: 2px solid rgba($purple500, 0.3);
+
   border-radius: $xxs;
   h2 {
     font: {
@@ -217,11 +218,10 @@ footer {
     &:last-of-type {
       flex: 1 1 40%;
       position: relative;
-      background: linear-gradient(
-        90deg,
-        hsla(312, 100%, 99%, 1) 0%,
-        $purple500 100%
-      );
+      background: url("../img/background_mask.svg"),
+        linear-gradient(90deg, hsla(312, 100%, 99%, 1) 0%, $purple500 50%);
+      animation: sliding-background 30s linear infinite;
+
       div {
         position: absolute;
 
@@ -622,16 +622,16 @@ h2 {
       img {
         width: 200px;
         position: absolute;
-        
-        bottom:0;
-        left: calc(-1.5*#{$h});
+
+        bottom: 0;
+        left: calc(-1.5 *#{$h});
         filter: drop-shadow(-$xxs $s $xxs rgba(black, 0.3));
       }
-      table{
-        background-color: rgba(black,0.01);
-        padding:$l;
+      table {
+        background-color: rgba(black, 0.01);
+        padding: $l;
         width: 100%;
-        th{
+        th {
           visibility: hidden;
         }
       }

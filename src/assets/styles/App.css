@@ -241,7 +241,8 @@ footer {
 .hero article:last-of-type {
   flex: 1 1 40%;
   position: relative;
-  background: linear-gradient(90deg, hsl(312, 100%, 99%) 0%, #9fa6e5 100%);
+  background: url("../img/background_mask.svg"), linear-gradient(90deg, hsl(312, 100%, 99%) 0%, #9fa6e5 50%);
+  animation: sliding-background 30s linear infinite;
 }
 .hero article:last-of-type div {
   position: absolute;
@@ -569,7 +570,7 @@ h2 {
   width: 200px;
   position: absolute;
   bottom: 0;
-  left: calc(-1.5*48px);
+  left: calc(-1.5 *48px);
   filter: drop-shadow(-7px 14px 7px rgba(0, 0, 0, 0.3));
 }
 .menu article:last-of-type table {
