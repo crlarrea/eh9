@@ -2,16 +2,26 @@ const MenuReducer = (state = [], action) => {
   switch (action.type) {
     case "setMenu":
       return { ...state, menu: [...action.payload] };
-    case "setCurrentView":
+    case "setView":
+      const { payload: selection } = action;
+      let filteredData = state.menu.filter((entry) => {
+        return entry.type === selection;
+      });
+
       return {
         ...state,
-        filteredView: [...action.payload.currentView],
-        activeSelection: action.payload.activeSelection,
+        currentView: filteredData,
+        activeSelection: selection,
       };
-    case "setTypes":
-      return { ...state, types: [...action.payload] };
+
+    case "setMenuSections":
+      const sections = Array.from(
+        new Set(state.menu.map((entry) => entry.type))
+      );
+      return { ...state, menuSections: sections };
+
     case "updateBasket":
-      return { ...state, basket: [...state.basket, action.payload.basket]};
+      return { ...state, basket: [...state.basket, action.payload] };
 
     default:
       return state;

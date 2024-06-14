@@ -35,7 +35,7 @@ export const Article = () => {
             {article.body.split("\\n").map((paragraph, index) => {
               return paragraph !== "" && <p key={index}>{paragraph}</p>;
             })}
-            <img src={article.image} />
+            <img src={article.image} loading="lazy" />
           </article>
         )}
       </section>

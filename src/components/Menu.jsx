@@ -10,8 +10,9 @@ import coffee from "../assets/img/coffee.webp";
 export const Menu = () => {
   const [menuState, dispatch] = useReducer(MenuReducer, {
     menu: [],
-    filteredView: [],
-    activeSelection: "coffee",
+    menuSections: [],
+    currentView: [],
+    activeSelection: null,
     basket: [],
   });
 
@@ -20,41 +21,9 @@ export const Menu = () => {
       .from("menu")
       .select("*")
       .neq("type", "milk");
-    const action = { type: "setMenu", payload: data };
-    dispatch(action);
-    updateView(data);
-    updateTypes(data);
-  };
-
-  const updateView = (data, condition = "coffee") => {
-    let filteredData = data.filter((entry) => {
-      return entry.type === condition;
-    });
-
-    const action = {
-      type: "setCurrentView",
-      payload: { activeSelection: condition, currentView: filteredData },
-    };
-    dispatch(action);
-  };
-
-  const updateTypes = (data) => {
-    let types = new Set(data.map((entry) => entry.type));
-    const action = {
-      type: "setTypes",
-      payload: types,
-    };
-    dispatch(action);
-  };
-
-  const updateBasket = (item) => {
-    const payload = { basket: item };
-    const action = {
-      type: "updateBasket",
-      payload: payload,
-    };
-    dispatch(action);
-    console.log(item);
+    dispatch({ type: "setMenu", payload: data });
+    dispatch({ type: "setMenuSections", payload: data });
+    dispatch({ type: "setView", payload: "coffee" });
   };
 
   useEffect(() => {
@@ -66,14 +35,14 @@ export const Menu = () => {
       <article>
         <h2>our menu </h2>
         <div>
-          {menuState?.types?.map((entry) => {
+          {menuState?.menuSections?.map((entry) => {
             return (
               <button
                 className={
                   entry === menuState.activeSelection ? "active" : "inactive"
                 }
                 onClick={() => {
-                  updateView(menuState.menu, entry);
+                  dispatch({ type: "setView", payload: entry });
                 }}
                 key={entry}
               >
@@ -92,12 +61,12 @@ export const Menu = () => {
               <th>price</th>
             </tr>
 
-            {menuState.filteredView.map((entry) => {
+            {menuState.currentView.map((entry) => {
               return (
                 <tr
                   key={entry.id}
                   onClick={() => {
-                    updateBasket(entry);
+                    dispatch({ type: "updateBasket", payload: entry });
                   }}
                 >
                   <td>
