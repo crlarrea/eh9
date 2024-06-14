@@ -445,8 +445,6 @@ h2 {
             width: 100%;
           }
         }
-        img {
-        }
       }
     }
   }
@@ -571,11 +569,20 @@ h2 {
         margin-top: $m;
         color: $brown900;
 
+        tbody {
+          display: flex;
+          flex-flow: column nowrap;
+          row-gap: $s;
+          padding-right: $xl;
+        }
         th {
           visibility: hidden;
         }
         tr {
           cursor: pointer;
+          display: inline-flex;
+          justify-content: space-between;
+
           &:hover {
             td {
               &:first-of-type {
@@ -608,7 +615,8 @@ h2 {
             }
           }
           &:last-of-type {
-            text-align: end;
+            display: inline-flex;
+            column-gap: $xxs;
             font: {
               family: "Roboto Regular";
             }
@@ -620,17 +628,28 @@ h2 {
       position: relative;
       padding: $h;
       img {
-        width: 200px;
-        position: absolute;
+        &:first-of-type {
+          width: 200px;
+          position: absolute;
 
-        bottom: 0;
-        left: calc(-1.5 *#{$h});
-        filter: drop-shadow(-$xxs $s $xxs rgba(black, 0.3));
+          bottom: 0;
+          left: calc(-1.5 *#{$h});
+          filter: drop-shadow(-$xxs $s $xxs rgba(black, 0.3));
+        }
+        &:last-of-type{
+          width: 150px;
+          align-self: flex-end;
+        }
       }
       table {
-        background-color: rgba(black, 0.01);
+        border-radius: $xxs;
+        margin-top: $h;
+        background-color: rgba(black, 0.02);
         padding: $l;
         width: 100%;
+        font: {
+          family: "courier";
+        }
         th {
           visibility: hidden;
         }

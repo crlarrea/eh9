@@ -4,7 +4,8 @@ const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
 const supabaseKey = import.meta.env.VITE_SUPABASE_KEY;
 const supabase = createClient(supabaseUrl, supabaseKey);
 import { MenuReducer } from "../Reducers/Reducers";
-
+import { FaPlus } from "react-icons/fa";
+import logo from "../assets/img/eh9_logo.webp";
 import coffee from "../assets/img/coffee.webp";
 
 export const Menu = () => {
@@ -63,12 +64,7 @@ export const Menu = () => {
 
             {menuState.currentView.map((entry) => {
               return (
-                <tr
-                  key={entry.id}
-                  onClick={() => {
-                    dispatch({ type: "updateBasket", payload: entry });
-                  }}
-                >
+                <tr key={entry.id}>
                   <td>
                     {entry.item_name}
                     <span>{entry?.ingredients?.join(", ")}</span>
@@ -78,6 +74,11 @@ export const Menu = () => {
                       style: "currency",
                       currency: "GBP",
                     }).format(entry.price_per_unit)}
+                    <FaPlus
+                      onClick={() => {
+                        dispatch({ type: "updateBasket", payload: entry });
+                      }}
+                    />
                   </td>
                 </tr>
               );
@@ -90,7 +91,8 @@ export const Menu = () => {
         </span>
       </article>
       <article>
-        <img src={coffee} />
+        <img src={coffee} alt="" />
+        {/* <img src={logo} alt="" /> */}
         <h2>your order</h2>
         <table>
           <tbody>
@@ -100,11 +102,17 @@ export const Menu = () => {
               <th>price</th>
             </tr>
 
-            {menuState.basket.map((entry) => {
+            {Object.values(menuState.basket).map((entry) => {
               return (
                 <tr key={entry}>
                   <td>{entry.item_name}</td>
-                  <td></td>
+                  <td>{entry.qty}</td>
+                  <td>
+                    {new Intl.NumberFormat("en-GB", {
+                      style: "currency",
+                      currency: "GBP",
+                    }).format(entry.qty * entry.price_per_unit)}
+                  </td>
                 </tr>
               );
             })}

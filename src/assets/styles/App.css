@@ -432,6 +432,7 @@ h2 {
 .about article:last-of-type div:last-of-type img {
   width: 100%;
 }
+
 .blog-article {
   min-height: 1000px;
   column-count: 2;
@@ -532,11 +533,19 @@ h2 {
   margin-top: 16px;
   color: #644028;
 }
+.menu article:first-of-type table tbody {
+  display: flex;
+  flex-flow: column nowrap;
+  row-gap: 14px;
+  padding-right: 20px;
+}
 .menu article:first-of-type table th {
   visibility: hidden;
 }
 .menu article:first-of-type table tr {
   cursor: pointer;
+  display: inline-flex;
+  justify-content: space-between;
 }
 .menu article:first-of-type table tr:hover td:first-of-type {
   transition: all 0.3s;
@@ -559,24 +568,32 @@ h2 {
   font-size: 14px;
 }
 .menu article:first-of-type table td:last-of-type {
-  text-align: end;
+  display: inline-flex;
+  column-gap: 7px;
   font-family: "Roboto Regular";
 }
 .menu article:last-of-type {
   position: relative;
   padding: 48px;
 }
-.menu article:last-of-type img {
+.menu article:last-of-type img:first-of-type {
   width: 200px;
   position: absolute;
   bottom: 0;
   left: calc(-1.5 *48px);
   filter: drop-shadow(-7px 14px 7px rgba(0, 0, 0, 0.3));
 }
+.menu article:last-of-type img:last-of-type {
+  width: 150px;
+  align-self: flex-end;
+}
 .menu article:last-of-type table {
-  background-color: rgba(0, 0, 0, 0.01);
+  border-radius: 7px;
+  margin-top: 48px;
+  background-color: rgba(0, 0, 0, 0.02);
   padding: 18px;
   width: 100%;
+  font-family: "courier";
 }
 .menu article:last-of-type table th {
   visibility: hidden;

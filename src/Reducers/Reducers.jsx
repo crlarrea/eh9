@@ -21,7 +21,20 @@ const MenuReducer = (state = [], action) => {
       return { ...state, menuSections: sections };
 
     case "updateBasket":
-      return { ...state, basket: [...state.basket, action.payload] };
+      if (!state.basket[action.payload.id]) {
+        let item = {};
+        item[action.payload.id] = action.payload;
+        item[action.payload.id].qty = 1;
+        return { ...state, basket: { ...state.basket, ...item } };
+      } else {
+        let newBasket = state.basket;
+        ++newBasket[action.payload.id].qty;
+        // let newBasket = state.basket[item].qty
+        // let item = action.payload.id;
+        // let item = {state.basket[item].qty}
+        
+        return { ...state, basket: newBasket };
+      }
 
     default:
       return state;
