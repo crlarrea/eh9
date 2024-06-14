@@ -586,7 +586,7 @@ h2 {
   position: absolute;
   bottom: 0;
   left: calc(-3 *48px);
-  filter: drop-shadow(-7px 14px 7px rgba(0, 0, 0, 0.3));
+  animation: move-shadow 10s linear infinite alternate;
 }
 .menu article:last-of-type table {
   margin-top: 20px;
@@ -647,6 +647,16 @@ h2 {
   }
   100% {
     background-position: 0 -500px;
+  }
+}
+@keyframes move-shadow {
+  0% {
+    filter: drop-shadow(-7px 14px 7px rgba(0, 0, 0, 0.3));
+    transform: scale(1) rotate(5deg) skewY(3deg) translateY(7px);
+  }
+  100% {
+    filter: drop-shadow(-14px 7px 7px rgba(0, 0, 0, 0.3));
+    transform: scale(1.1) rotate(-5deg);
   }
 }
 
