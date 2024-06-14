@@ -20,7 +20,7 @@ const MenuReducer = (state = [], action) => {
       );
       return { ...state, menuSections: sections };
 
-    case "updateBasket":
+    case "addToBasket":
       if (!state.basket[action.payload.id]) {
         let item = {};
         item[action.payload.id] = action.payload;
@@ -29,10 +29,21 @@ const MenuReducer = (state = [], action) => {
       } else {
         let newBasket = state.basket;
         ++newBasket[action.payload.id].qty;
-        // let newBasket = state.basket[item].qty
-        // let item = action.payload.id;
-        // let item = {state.basket[item].qty}
-        
+
+        return { ...state, basket: newBasket };
+      }
+
+    case "removeFromBasket":
+      if (!state.basket[action.payload.id]) {
+        return { ...state, basket: { ...state.basket } };
+      } else {
+        let newBasket = state.basket;
+        if (newBasket[action.payload.id].qty > 1) {
+          --newBasket[action.payload.id].qty;
+        } else {
+          delete newBasket[action.payload.id];
+        }
+
         return { ...state, basket: newBasket };
       }
 

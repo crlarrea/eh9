@@ -4,9 +4,10 @@ const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
 const supabaseKey = import.meta.env.VITE_SUPABASE_KEY;
 const supabase = createClient(supabaseUrl, supabaseKey);
 import { MenuReducer } from "../Reducers/Reducers";
-import { FaPlus } from "react-icons/fa";
+import { FaMinus,FaPlus } from "react-icons/fa";
 import logo from "../assets/img/eh9_logo.webp";
 import coffee from "../assets/img/coffee.webp";
+import { Logo } from "./Logo";
 
 export const Menu = () => {
   const [menuState, dispatch] = useReducer(MenuReducer, {
@@ -30,6 +31,12 @@ export const Menu = () => {
   useEffect(() => {
     getMenu();
   }, []);
+
+  let total =
+    Object.values(menuState.basket).length !== 0 &&
+    Object.values(menuState.basket)
+      .map((el) => el.price_per_unit * el.qty)
+      .reduce((total, el) => total + el);
 
   return (
     <section className="menu" id="menu">
@@ -70,13 +77,17 @@ export const Menu = () => {
                     <span>{entry?.ingredients?.join(", ")}</span>
                   </td>
                   <td>
+                  <FaMinus onClick={() => {
+                        dispatch({ type: "removeFromBasket", payload: entry });
+                      }} />
+
                     {new Intl.NumberFormat("en-GB", {
                       style: "currency",
                       currency: "GBP",
                     }).format(entry.price_per_unit)}
                     <FaPlus
                       onClick={() => {
-                        dispatch({ type: "updateBasket", payload: entry });
+                        dispatch({ type: "addToBasket", payload: entry });
                       }}
                     />
                   </td>
@@ -92,32 +103,46 @@ export const Menu = () => {
       </article>
       <article>
         <img src={coffee} alt="" />
-        {/* <img src={logo} alt="" /> */}
-        <h2>your order</h2>
-        <table>
-          <tbody>
-            <tr>
-              <th>product</th>
-              <th>quantity</th>
-              <th>price</th>
-            </tr>
 
-            {Object.values(menuState.basket).map((entry) => {
-              return (
-                <tr key={entry}>
-                  <td>{entry.item_name}</td>
-                  <td>{entry.qty}</td>
-                  <td>
-                    {new Intl.NumberFormat("en-GB", {
-                      style: "currency",
-                      currency: "GBP",
-                    }).format(entry.qty * entry.price_per_unit)}
-                  </td>
-                </tr>
-              );
-            })}
-          </tbody>
-        </table>
+        <h2>your order</h2>
+        {total  && (
+          <table>
+            <tbody>
+              <tr>
+                <th>quantity</th>
+                <th>product</th>
+                <th>price</th>
+              </tr>
+              <tr>
+                <td>
+                  <span>eh9 | espresso</span>
+                  <span>specialty coffee</span>
+                </td>
+              </tr>
+              {Object.values(menuState.basket).map((entry) => {
+                return (
+                  <tr key={entry.id}>
+                    <td>
+                      {entry.qty} {entry.item_name}
+                    </td>
+
+                    <td>{(entry.qty * entry.price_per_unit).toFixed(2)}</td>
+                  </tr>
+                );
+              })}
+
+              <tr>
+                <td>total</td>
+                <td>
+                  {new Intl.NumberFormat("en-GB", {
+                    style: "currency",
+                    currency: "GBP",
+                  }).format(total)}
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        )}
       </article>
     </section>
   );

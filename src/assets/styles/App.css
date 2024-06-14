@@ -493,7 +493,7 @@ h2 {
   display: flex;
   flex-flow: row nowrap;
   width: 850px;
-  min-height: 550px;
+  min-height: 650px;
   border: 2px solid #f3bfb6;
   border-radius: 7px;
 }
@@ -536,7 +536,6 @@ h2 {
 .menu article:first-of-type table tbody {
   display: flex;
   flex-flow: column nowrap;
-  row-gap: 14px;
   padding-right: 20px;
 }
 .menu article:first-of-type table th {
@@ -552,9 +551,15 @@ h2 {
   transform: translateX(14px);
   color: black;
 }
+.menu article:first-of-type table tr:hover td svg {
+  visibility: visible;
+}
 .menu article:first-of-type table td {
   padding-bottom: 7px;
   vertical-align: top;
+}
+.menu article:first-of-type table td svg {
+  visibility: hidden;
 }
 .menu article:first-of-type table td:first-of-type {
   display: inline-flex;
@@ -576,27 +581,48 @@ h2 {
   position: relative;
   padding: 48px;
 }
-.menu article:last-of-type img:first-of-type {
+.menu article:last-of-type img {
   width: 200px;
   position: absolute;
   bottom: 0;
   left: calc(-1.5 *48px);
   filter: drop-shadow(-7px 14px 7px rgba(0, 0, 0, 0.3));
 }
-.menu article:last-of-type img:last-of-type {
-  width: 150px;
-  align-self: flex-end;
-}
 .menu article:last-of-type table {
-  border-radius: 7px;
-  margin-top: 48px;
-  background-color: rgba(0, 0, 0, 0.02);
-  padding: 18px;
-  width: 100%;
+  margin-top: 20px;
+  display: flex;
+  flex-flow: column nowrap;
+  max-height: 350px;
+  overflow-y: scroll;
   font-family: "courier";
 }
 .menu article:last-of-type table th {
-  visibility: hidden;
+  display: none;
+}
+.menu article:last-of-type table tbody {
+  display: inherit;
+  flex-flow: inherit;
+  padding: 30px;
+  row-gap: 7px;
+}
+.menu article:last-of-type table tbody tr {
+  display: inline-flex;
+  justify-content: space-between;
+}
+.menu article:last-of-type table tbody tr:nth-of-type(2) {
+  justify-content: center;
+  padding-bottom: 16px;
+  font-family: "Gopher Bold";
+  text-transform: uppercase;
+}
+.menu article:last-of-type table tbody tr:nth-of-type(2) td {
+  display: inline-flex;
+  flex-flow: column nowrap;
+}
+.menu article:last-of-type table tbody tr:last-of-type {
+  border-top: 2px dashed black;
+  margin-top: 16px;
+  padding-top: 16px;
 }
 
 .active {
