@@ -75,16 +75,17 @@ export const Menu = () => {
                     <span>{entry?.ingredients?.join(", ")}</span>
                   </td>
                   <td>
-                    <FaMinus
-                      onClick={() => {
-                        dispatch({ type: "removeFromBasket", payload: entry });
-                      }}
-                    />
+                  
 
                     {new Intl.NumberFormat("en-GB", {
                       style: "currency",
                       currency: "GBP",
                     }).format(entry.price_per_unit)}
+                      <FaMinus
+                      onClick={() => {
+                        dispatch({ type: "removeFromBasket", payload: entry });
+                      }}
+                    />
                     <FaPlus
                       onClick={() => {
                         dispatch({ type: "addToBasket", payload: entry });
