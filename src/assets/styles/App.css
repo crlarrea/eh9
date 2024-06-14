@@ -585,14 +585,14 @@ h2 {
   width: 200px;
   position: absolute;
   bottom: 0;
-  left: calc(-1.5 *48px);
+  left: calc(-3 *48px);
   filter: drop-shadow(-7px 14px 7px rgba(0, 0, 0, 0.3));
 }
 .menu article:last-of-type table {
   margin-top: 20px;
   display: flex;
   flex-flow: column nowrap;
-  max-height: 350px;
+  max-height: 480px;
   overflow-y: scroll;
   font-family: "courier";
 }

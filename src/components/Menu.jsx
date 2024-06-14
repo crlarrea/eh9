@@ -4,10 +4,8 @@ const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
 const supabaseKey = import.meta.env.VITE_SUPABASE_KEY;
 const supabase = createClient(supabaseUrl, supabaseKey);
 import { MenuReducer } from "../Reducers/Reducers";
-import { FaMinus,FaPlus } from "react-icons/fa";
-import logo from "../assets/img/eh9_logo.webp";
+import { FaMinus, FaPlus } from "react-icons/fa";
 import coffee from "../assets/img/coffee.webp";
-import { Logo } from "./Logo";
 
 export const Menu = () => {
   const [menuState, dispatch] = useReducer(MenuReducer, {
@@ -15,7 +13,7 @@ export const Menu = () => {
     menuSections: [],
     currentView: [],
     activeSelection: null,
-    basket: [],
+    basket: (JSON.parse(localStorage.getItem('basket'))||[]),
   });
 
   const getMenu = async () => {
@@ -77,9 +75,11 @@ export const Menu = () => {
                     <span>{entry?.ingredients?.join(", ")}</span>
                   </td>
                   <td>
-                  <FaMinus onClick={() => {
+                    <FaMinus
+                      onClick={() => {
                         dispatch({ type: "removeFromBasket", payload: entry });
-                      }} />
+                      }}
+                    />
 
                     {new Intl.NumberFormat("en-GB", {
                       style: "currency",
@@ -105,7 +105,7 @@ export const Menu = () => {
         <img src={coffee} alt="" />
 
         <h2>your order</h2>
-        {total  && (
+        {total && (
           <table>
             <tbody>
               <tr>

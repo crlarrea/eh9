@@ -29,7 +29,8 @@ const MenuReducer = (state = [], action) => {
       } else {
         let newBasket = state.basket;
         ++newBasket[action.payload.id].qty;
-
+        
+        localStorage.setItem("basket", JSON.stringify(newBasket));
         return { ...state, basket: newBasket };
       }
 
@@ -44,6 +45,7 @@ const MenuReducer = (state = [], action) => {
           delete newBasket[action.payload.id];
         }
 
+        localStorage.setItem("basket", JSON.stringify(newBasket));
         return { ...state, basket: newBasket };
       }
 
