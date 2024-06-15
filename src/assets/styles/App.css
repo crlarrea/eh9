@@ -687,5 +687,45 @@ h2 {
     transform: scale(1.1) rotate(-5deg);
   }
 }
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  #root {
+    width: 90vw;
+    margin: 30px;
+    padding: 0;
+    border-radius: 14px;
+  }
+  section {
+    min-width: 550px;
+    margin-top: 60px;
+    margin-bottom: 60px;
+  }
+  header nav {
+    justify-content: ce;
+  }
+  footer {
+    display: none;
+  }
+  .logo {
+    font-size: 14px;
+  }
+  .shopping-trolley {
+    flex: 0 0 10%;
+  }
+  .hero article:last-of-type div {
+    bottom: 0;
+  }
+  .hero article:last-of-type div:last-of-type img {
+    width: 300px;
+  }
+  .menu {
+    display: none;
+  }
+  .blog {
+    display: none;
+  }
+  .spotify-player {
+    display: none;
+  }
+}
 
 /*# sourceMappingURL=App.css.map */

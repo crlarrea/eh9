@@ -1,0 +1,59 @@
+// Tablet
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  #root {
+    width: 90vw;
+    margin: $xxl;
+    padding: 0;
+    border-radius: $s;
+  }
+  section {
+    min-width: 550px;
+    margin-top: 60px;
+    margin-bottom: 60px;
+  }
+  header {
+    // display: none;
+    nav {
+      justify-content: ce;
+    }
+  }
+  main {
+  }
+  footer {
+    display: none;
+  }
+
+  .logo {
+    font: {
+      size: $s;
+    }
+  }
+  .shopping-trolley {
+    flex: 0 0 10%;
+  }
+
+  .hero {
+    article {
+      &:last-of-type {
+        
+        div {
+            bottom:0;
+          &:last-of-type {
+            img{
+                width: 300px;
+            }
+          }
+        }
+      }
+    }
+  }
+  .menu {
+    display: none;
+  }
+  .blog {
+    display: none;
+  }
+  .spotify-player {
+    display: none;
+  }
+}
