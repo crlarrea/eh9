@@ -49,6 +49,9 @@ const MenuReducer = (state = [], action) => {
         return { ...state, basket: newBasket };
       }
 
+
+      case "sendOrder":
+        console.log(action.payload)
     default:
       return state;
   }

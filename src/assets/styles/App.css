@@ -493,7 +493,7 @@ h2 {
   display: flex;
   flex-flow: row nowrap;
   width: 850px;
-  min-height: 650px;
+  height: 650px;
   border: 2px solid #f3bfb6;
   border-radius: 7px;
 }
@@ -504,6 +504,7 @@ h2 {
   padding: 48px;
   background: url("../img/background_mask.svg") #f3bfb6;
   animation: sliding-background 30s linear infinite;
+  position: relative;
 }
 .menu article:first-of-type h2 {
   margin-bottom: 20px;
@@ -525,68 +526,73 @@ h2 {
   margin-bottom: -3px;
   background-color: transparent;
   padding: 7px 14px;
+  color: #644028;
   font-size: 18px;
   text-transform: capitalize;
 }
 .menu article:first-of-type table {
-  width: 100%;
-  margin-top: 16px;
+  display: flex;
+  flex-flow: column nowrap;
+  border-collapse: collapse;
   color: #644028;
 }
 .menu article:first-of-type table tbody {
-  display: flex;
-  flex-flow: column nowrap;
-  padding-right: 20px;
+  display: inherit;
+  flex-flow: inherit;
 }
-.menu article:first-of-type table th {
+.menu article:first-of-type table tbody th {
+  display: none;
+}
+.menu article:first-of-type table tbody tr {
+  transition: all 0.3s;
+  display: inherit;
+  justify-content: space-between;
+  cursor: pointer;
+  padding: 7px;
+}
+.menu article:first-of-type table tbody tr svg {
+  transition: all 0.1s;
   visibility: hidden;
 }
-.menu article:first-of-type table tr {
-  cursor: pointer;
-  display: inline-flex;
-  justify-content: space-between;
+.menu article:first-of-type table tbody tr svg:first-of-type {
+  color: #e9846b;
 }
-.menu article:first-of-type table tr:hover td:first-of-type {
-  transition: all 0.3s;
-  transform: translateX(14px);
-  color: black;
+.menu article:first-of-type table tbody tr svg:last-of-type {
+  color: #749e81;
 }
-.menu article:first-of-type table tr:hover td svg {
+.menu article:first-of-type table tbody tr:hover {
+  background-color: rgba(100, 64, 40, 0.1);
+}
+.menu article:first-of-type table tbody tr:hover svg {
   visibility: visible;
 }
-.menu article:first-of-type table td {
-  padding-bottom: 7px;
-  vertical-align: top;
-}
-.menu article:first-of-type table td svg {
-  visibility: hidden;
-}
-.menu article:first-of-type table td:first-of-type {
-  display: inline-flex;
+.menu article:first-of-type table tbody tr td:first-of-type {
+  display: inherit;
   flex-flow: column nowrap;
-  text-align: start;
   font-family: "Gopher Bold";
   text-transform: capitalize;
 }
-.menu article:first-of-type table td:first-of-type span {
+.menu article:first-of-type table tbody tr td:first-of-type span {
+  display: block;
   font-family: "Roboto Thin";
   font-size: 14px;
 }
-.menu article:first-of-type table td:last-of-type {
-  display: inline-flex;
+.menu article:first-of-type table tbody tr td:last-of-type {
+  display: inherit;
   column-gap: 7px;
-  font-family: "Roboto Regular";
+  align-items: center;
 }
-.menu article:last-of-type {
-  position: relative;
-  padding: 48px;
-}
-.menu article:last-of-type img {
+.menu article:first-of-type img {
   width: 200px;
   position: absolute;
+  left: -60px;
   bottom: 0;
-  left: calc(-3 *48px);
   animation: move-shadow 10s linear infinite alternate;
+}
+.menu article:last-of-type {
+  display: flex;
+  flex-flow: column nowrap;
+  padding: 48px;
 }
 .menu article:last-of-type table {
   margin-top: 20px;
@@ -624,6 +630,29 @@ h2 {
   margin-top: 16px;
   padding-top: 16px;
 }
+.menu article:last-of-type div {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.menu article:last-of-type div p {
+  color: #e9846b;
+  font-family: "Gopher Bold";
+  text-transform: capitalize;
+}
+.menu article:last-of-type div button {
+  height: 50px;
+  aspect-ratio: 1;
+  border-radius: 7px;
+  background-color: #f3bfb6;
+  border: 2px solid rgba(100, 64, 40, 0.6);
+  cursor: pointer;
+}
+.menu article:last-of-type div button svg {
+  color: #644028;
+  font-size: 20px;
+}
 
 .active {
   border: none;
@@ -634,7 +663,6 @@ h2 {
 
 .inactive {
   border: none;
-  color: #644028;
   font-family: "Roboto Thin";
 }
 .inactive svg {

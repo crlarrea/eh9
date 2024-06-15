@@ -4,8 +4,9 @@ const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
 const supabaseKey = import.meta.env.VITE_SUPABASE_KEY;
 const supabase = createClient(supabaseUrl, supabaseKey);
 import { MenuReducer } from "../Reducers/Reducers";
-import { FaMinus, FaPlus } from "react-icons/fa";
+import { FaMinusCircle, FaPlusCircle } from "react-icons/fa";
 import coffee from "../assets/img/coffee.webp";
+import { PiCoffeeBeanFill } from "react-icons/pi";
 
 export const Menu = () => {
   const [menuState, dispatch] = useReducer(MenuReducer, {
@@ -13,7 +14,7 @@ export const Menu = () => {
     menuSections: [],
     currentView: [],
     activeSelection: null,
-    basket: (JSON.parse(localStorage.getItem('basket'))||[]),
+    basket: JSON.parse(localStorage.getItem("basket")) || [],
   });
 
   const getMenu = async () => {
@@ -72,21 +73,22 @@ export const Menu = () => {
                 <tr key={entry.id}>
                   <td>
                     {entry.item_name}
+
                     <span>{entry?.ingredients?.join(", ")}</span>
                   </td>
-                  <td>
-                  
 
+                  <td>
                     {new Intl.NumberFormat("en-GB", {
                       style: "currency",
                       currency: "GBP",
                     }).format(entry.price_per_unit)}
-                      <FaMinus
+
+                    <FaMinusCircle
                       onClick={() => {
                         dispatch({ type: "removeFromBasket", payload: entry });
                       }}
                     />
-                    <FaPlus
+                    <FaPlusCircle
                       onClick={() => {
                         dispatch({ type: "addToBasket", payload: entry });
                       }}
@@ -97,14 +99,9 @@ export const Menu = () => {
             })}
           </tbody>
         </table>
-
-        <span>
-          {menuState.activeSelection !== "food" ? "oat milk £0.15" : ""}
-        </span>
+        <img src={coffee} alt="" />
       </article>
       <article>
-        <img src={coffee} alt="" />
-
         <h2>your order</h2>
         {total && (
           <table>
@@ -144,6 +141,17 @@ export const Menu = () => {
             </tbody>
           </table>
         )}
+
+        <div>
+          <p>ready, set, brew!</p>
+          <button
+            onClick={() => {
+              dispatch({ type: "sendOrder", payload: menuState.basket });
+            }}
+          >
+            <PiCoffeeBeanFill />
+          </button>
+        </div>
       </article>
     </section>
   );

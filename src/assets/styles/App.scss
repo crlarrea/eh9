@@ -522,7 +522,7 @@ h2 {
   display: flex;
   flex-flow: row nowrap;
   width: 850px;
-  min-height: 650px;
+  height: 650px;
   border: 2px solid $pink500;
   border-radius: $xxs;
 
@@ -532,7 +532,7 @@ h2 {
       padding: $h;
       background: url("../img/background_mask.svg") $pink500;
       animation: sliding-background 30s linear infinite;
-
+      position: relative;
       h2 {
         margin-bottom: $xl;
         padding-bottom: $xs;
@@ -556,6 +556,7 @@ h2 {
           margin-bottom: -3px;
           background-color: transparent;
           padding: $xxs $s;
+          color: $brown900;
           font: {
             size: $l;
           }
@@ -565,87 +566,87 @@ h2 {
         }
       }
       table {
-        width: 100%;
-        margin-top: $m;
+        display: flex;
+        flex-flow: column nowrap;
+        border-collapse: collapse;
         color: $brown900;
-
         tbody {
-          display: flex;
-          flex-flow: column nowrap;
-          padding-right: $xl;
-        }
-        th {
-          visibility: hidden;
-        }
-        tr {
-          cursor: pointer;
-          display: inline-flex;
-          justify-content: space-between;
+          display: inherit;
+          flex-flow: inherit;
 
-          &:hover {
-            td {
+          th {
+            display: none;
+          }
+          tr {
+            transition: all 0.3s;
+            display: inherit;
+            justify-content: space-between;
+            cursor: pointer;
+            padding: $xxs;
+
+            svg {
+              transition: all 0.1s;
+              visibility: hidden;
               &:first-of-type {
-                transition: all 0.3s;
-                transform: translateX($s);
-                color: black;
+                color: $orange900;
               }
+              &:last-of-type {
+                color: $green900;
+              }
+            }
+            &:hover {
+              background-color: rgba($brown900, 0.1);
               svg {
                 visibility: visible;
               }
             }
-          }
-        }
-        td {
-          padding-bottom: $xxs;
-          vertical-align: top;
-          svg {
-            visibility: hidden;
-          }
-          &:first-of-type {
-            display: inline-flex;
-            flex-flow: column nowrap;
-            text-align: start;
-            font: {
-              family: "Gopher Bold";
-            }
-            text: {
-              transform: capitalize;
-            }
-            span {
-              font: {
-                family: "Roboto Thin";
-                size: $s;
+
+            td {
+              &:first-of-type {
+                display: inherit;
+                flex-flow: column nowrap;
+                font: {
+                  family: "Gopher Bold";
+                }
+                text-transform: capitalize;
+                span {
+                  display: block;
+                  font: {
+                    family: "Roboto Thin";
+                    size: $s;
+                  }
+                }
+              }
+              &:last-of-type {
+                display: inherit;
+                column-gap: $xxs;
+                align-items: center;
               }
             }
           }
-          &:last-of-type {
-            display: inline-flex;
-            column-gap: $xxs;
-            font: {
-              family: "Roboto Regular";
-            }
-          }
         }
       }
-    }
-    &:last-of-type {
-      position: relative;
-      padding: $h;
       img {
         width: 200px;
         position: absolute;
+        left: -$xh;
         bottom: 0;
-        left: calc(-3 *#{$h});
-        
         animation: move-shadow 10s linear infinite alternate;
       }
+    }
+    &:last-of-type {
+      display: flex;
+      flex-flow: column nowrap;
+
+      padding: $h;
+
       table {
         margin-top: $xl;
         display: flex;
         flex-flow: column nowrap;
         max-height: 480px;
         overflow-y: scroll;
-        
+
         font: {
           family: "courier";
         }
@@ -681,6 +682,35 @@ h2 {
           }
         }
       }
+      div {
+        margin-top: auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        p {
+          color: $orange900;
+          font: {
+            family: "Gopher Bold";
+          }
+          text: {
+            transform: capitalize;
+          }
+        }
+        button {
+          height: 50px;
+          aspect-ratio: 1;
+          border-radius: $xxs;
+          background-color: $pink500;
+          border: 2px solid rgba($brown900,0.6);
+          cursor: pointer;
+          svg {
+            color: $brown900;
+            font: {
+              size: $xl;
+            }
+          }
+        }
+      }
     }
   }
 }
@@ -696,7 +726,6 @@ h2 {
 }
 .inactive {
   border: none;
-  color: $brown900;
 
   font: {
     family: "Roboto Thin";
@@ -715,14 +744,12 @@ h2 {
   }
 }
 
-@keyframes move-shadow{
-  0%{
+@keyframes move-shadow {
+  0% {
     filter: drop-shadow(-$xxs $s $xxs rgba(black, 0.3));
     transform: scale(1) rotate(5deg) skewY(3deg) translateY($xxs);
-    
-    
   }
-  100%{
+  100% {
     filter: drop-shadow(-$s $xxs $xxs rgba(black, 0.3));
     transform: scale(1.1) rotate(-5deg);
   }
