@@ -355,7 +355,7 @@ footer article:last-of-type {
 }
 footer article:last-of-type img {
   width: 350px;
-  height: auto;
+  object-fit: contain;
 }
 
 .btn {

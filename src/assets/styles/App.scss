@@ -360,7 +360,8 @@ footer {
       flex-flow: row nowrap;
       img {
         width: 350px;
-        height: auto;
+        object-fit: contain;
+        
       }
     }
   }
