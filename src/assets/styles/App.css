@@ -782,6 +782,7 @@ h2 {
     padding: 0;
   }
   .spotify-player div {
+    left: 0;
     top: -82px;
   }
   .spotify-player iframe {
