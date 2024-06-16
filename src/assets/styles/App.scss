@@ -328,6 +328,7 @@ footer {
         border-top: 2px solid rgba($brown900, 0.6);
 
         display: inherit;
+        justify-content: center;
         flex-flow: row wrap;
         column-gap: $xl;
         margin-top: $m;

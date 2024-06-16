@@ -330,6 +330,7 @@ footer article:nth-of-type(2) div a:hover {
 footer article:nth-of-type(2) p {
   border-top: 2px solid rgba(100, 64, 40, 0.6);
   display: inherit;
+  justify-content: center;
   flex-flow: row wrap;
   column-gap: 20px;
   margin-top: 16px;
@@ -815,4 +816,4 @@ h2 {
   }
 }
 
-/*# sourceMappingURL=App.css.map */
+/*# sourceMappingURL=app.css.map */

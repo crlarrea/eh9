@@ -7,7 +7,7 @@ import { CiShop } from "react-icons/ci";
 export const Footer = () => {
   return (
     <>
-      <article id='find-us'>
+      <article id="find-us">
         <h2>opening times</h2>
 
         <p>
@@ -16,16 +16,11 @@ export const Footer = () => {
         <p>
           <span>Sat - Sun:</span> 10 AM - 4 PM
         </p>
-
-        
       </article>
       <article>
         <h3>Follow us on</h3>
         <div>
-          <Link
-            to="https://www.instagram.com/eh9.espresso"
-            target="_blank"
-          >
+          <Link to="https://www.instagram.com/eh9.espresso" target="_blank">
             <FaInstagram />
           </Link>
           <Link to="https://www.tiktok.com/@eh9.espresso" target="_blank">
@@ -39,6 +34,10 @@ export const Footer = () => {
           <Link to="https://maps.app.goo.gl/DKspTeqE4UsHTidn6" target="_blank">
             94, Annfield Rd
           </Link>
+          <Link
+            to="https://www.eh9espresso.com/"
+            target="_blank"
+          >Original site: eh9espresso</Link>
         </p>
       </article>
       <article>
