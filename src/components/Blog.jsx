@@ -33,7 +33,7 @@ export const Blog = () => {
   }, []);
 
   return (
-    <section className="blog">
+    <section className="blog" id="news">
       <h2>Latest</h2>
       <div>
         {articles.map((entry) => {

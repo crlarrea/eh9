@@ -7,9 +7,7 @@
     border-radius: $s;
   }
   section {
-    min-width: 550px;
-    margin-top: 60px;
-    margin-bottom: 60px;
+    width: 80vw;
   }
   header {
     // display: none;
@@ -20,7 +18,32 @@
   main {
   }
   footer {
-    display: none;
+    border-bottom: {
+      left-radius: $s;
+      right-radius: $s;
+    }
+    article {
+      &:first-of-type {
+        flex: 0 0 30%;
+      }
+      &:nth-of-type(2) {
+        flex: 0 0 50%;
+        p {
+          flex-flow: column nowrap;
+        }
+      }
+      &:last-of-type {
+        flex: 0 0 10%;
+        justify-content: flex-end;
+        position: relative;
+        img {
+          position: absolute;
+          bottom: 0;
+          right: -250%;
+          width: 200px;
+        }
+      }
+    }
   }
 
   .logo {
@@ -32,15 +55,19 @@
     flex: 0 0 10%;
   }
 
+  .copyright {
+    top: 200px;
+    right: -$h;
+  }
   .hero {
+    width: 80vw;
     article {
       &:last-of-type {
-        
         div {
-            bottom:0;
+          bottom: 0;
           &:last-of-type {
-            img{
-                width: 300px;
+            img {
+              width: 300px;
             }
           }
         }
@@ -48,12 +75,85 @@
     }
   }
   .menu {
-    display: none;
+    article {
+      &:first-of-type {
+        padding: $h $l $h $l;
+        div {
+          flex-flow: row nowrap;
+        }
+        table {
+          tr {
+            td {
+              span {
+                max-width: 20ch;
+              }
+            }
+          }
+        }
+        img {
+          bottom: -$xh;
+        }
+      }
+      &:last-of-type {
+        padding: $h $l $h $l;
+        table {
+          max-height: 400px;
+        }
+      }
+    }
   }
   .blog {
-    display: none;
+    article {
+      flex: 0 0 33%;
+      p {
+      }
+    }
+    div {
+      span {
+        display: none;
+      }
+    }
   }
   .spotify-player {
-    display: none;
+    padding: 0;
+    div {
+      
+      top: -82px;
+    }
+    iframe {
+      width: 80vw;
+    }
+  }
+
+  .about {
+    flex-flow: column nowrap;
+    article {
+      &:first-of-type{
+        p{
+          text-align: justify;
+        }
+      }
+      &:last-of-type {
+        div {
+          flex: 0 0 60%;
+          &:nth-of-type(2n) {
+            flex: 0 0 30%;
+          }
+          &:last-of-type {
+            flex: 0 0 92%;
+          }
+        }
+        margin-top: $xh;
+        justify-content: flex-start;
+      }
+    }
+  }
+
+  .blog-article {
+    h3 {
+      font: {
+        size: $h;
+      }
+    }
   }
 }

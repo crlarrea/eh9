@@ -7,7 +7,7 @@ import { CiShop } from "react-icons/ci";
 export const Footer = () => {
   return (
     <>
-      <article>
+      <article id='find-us'>
         <h2>opening times</h2>
 
         <p>

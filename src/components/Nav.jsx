@@ -8,8 +8,9 @@ export const Nav = () => {
     <nav>
       <Logo />
 
-      <Link to="/">home</Link>
-      <Link to="/#menu" onClick={()=>{scrollTo('#menu')}}> menu</Link>
+      <Link to="/#ooncy" onClick={()=>{scrollTo('#ooncy')}}>OONCY</Link>
+      <Link to="/#find-us" onClick={()=>{scrollTo('#find-us')}}> find us</Link>
+      <Link to="/#news" onClick={()=>{scrollTo('#news')}}> news</Link>
       <Link to="/about">about</Link>
 
       <div className="shopping-trolley">

@@ -1,7 +1,7 @@
 @import "./UISystem.scss";
 
 section {
-  min-width: 850px;
+  width: 850px;
   margin: {
     top: $xh;
     bottom: $xh;
@@ -394,7 +394,7 @@ h2 {
 .about {
   display: flex;
   flex-flow: row wrap;
-  padding: $h;
+  
 
   article {
     display: inherit;
@@ -419,9 +419,12 @@ h2 {
       flex: 0 0 50%;
       flex-flow: row wrap;
       align-content: flex-end;
-      justify-content: center;
+      justify-content: flex-end;
+      align-items: fl;
       row-gap: $xxs;
       column-gap: $xxs;
+      
+      
 
       div {
         flex: 0 0 25%;
@@ -439,7 +442,7 @@ h2 {
           filter: hue-rotate(90deg);
         }
         &:last-of-type {
-          flex: 0 0 100%;
+          flex: 0 0 87%;
           height: 350px;
           img {
             width: 100%;
@@ -521,7 +524,6 @@ h2 {
 .menu {
   display: flex;
   flex-flow: row nowrap;
-  width: 850px;
   height: 650px;
   border: 2px solid $pink500;
   border-radius: $xxs;
@@ -699,7 +701,7 @@ h2 {
         button {
           height: 50px;
           aspect-ratio: 1;
-          border-radius: $xxs;
+          border-radius: 100%;
           background-color: $pink500;
           border: 2px solid rgba($brown900,0.6);
           cursor: pointer;
