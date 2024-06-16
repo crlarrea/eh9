@@ -61,13 +61,21 @@
   }
   .hero {
     width: 80vw;
+    height: 300px;
     article {
+      &:first-of-type{
+        flex: 0 0 20%;
+        a{
+          display:  none;
+        }
+      }
       &:last-of-type {
+        flex: 1 1 80%;
         div {
           bottom: 0;
           &:last-of-type {
             img {
-              width: 300px;
+              width: 250px;
             }
           }
         }

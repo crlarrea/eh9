@@ -735,12 +735,22 @@ h2 {
   }
   .hero {
     width: 80vw;
+    height: 300px;
+  }
+  .hero article:first-of-type {
+    flex: 0 0 20%;
+  }
+  .hero article:first-of-type a {
+    display: none;
+  }
+  .hero article:last-of-type {
+    flex: 1 1 80%;
   }
   .hero article:last-of-type div {
     bottom: 0;
   }
   .hero article:last-of-type div:last-of-type img {
-    width: 300px;
+    width: 250px;
   }
   .menu article:first-of-type {
     padding: 48px 18px 48px 18px;
