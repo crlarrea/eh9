@@ -711,6 +711,7 @@ h2 {
   }
   footer article:nth-of-type(2) p {
     flex-flow: column nowrap;
+    align-items: center;
   }
   footer article:last-of-type {
     flex: 0 0 10%;
