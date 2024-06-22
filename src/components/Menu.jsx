@@ -101,9 +101,10 @@ export const Menu = () => {
         </table>
         <img src={coffee} alt="" />
       </article>
-      <article>
-        <h2>your order</h2>
-        {total && (
+      {total && (
+        <article>
+          <h2>your order</h2>
+
           <table>
             <tbody>
               <tr>
@@ -140,19 +141,19 @@ export const Menu = () => {
               </tr>
             </tbody>
           </table>
-        )}
 
-        <div>
-          <p>ready, set, brew!</p>
-          <button
-            onClick={() => {
-              dispatch({ type: "sendOrder", payload: menuState.basket });
-            }}
-          >
-            <PiCoffeeBeanFill />
-          </button>
-        </div>
-      </article>
+          <div>
+            <p>ready, set, brew!</p>
+            <button
+              onClick={() => {
+                dispatch({ type: "sendOrder", payload: menuState.basket });
+              }}
+            >
+              <PiCoffeeBeanFill />
+            </button>
+          </div>
+        </article>
+      )}
     </section>
   );
 };

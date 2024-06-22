@@ -28,14 +28,7 @@ export const Nav = () => {
       >
         find us
       </Link>
-      <Link
-        to="/#news"
-        onClick={() => {
-          scrollToElement("news");
-        }}
-      >
-        news
-      </Link>
+
       <Link to="/about">about</Link>
 
       <div className="shopping-trolley">
